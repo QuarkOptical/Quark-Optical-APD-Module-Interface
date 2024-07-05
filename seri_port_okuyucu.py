@@ -156,8 +156,9 @@ class SeriPortOkuyucu(QMainWindow):
         self.is_connected = False
         self.is_started = False
         self.qss_file = os.path.dirname(os.path.abspath(__file__))+"/assets/styles/slider.qss"
-        self.qss_file2 = os.path.dirname(os.path.abspath(__file__))+"/assets/styles/settings.qss"
+        self.qss_file2 = os.path.dirname(os.path.abspath(__file__))+"/assets/styles/slider.qss"
 
+        print(self.qss_file2)
         self.timer = QTimer()
         self.terminal_timer=QTimer()
         self.terminal_timer.setInterval(100)
@@ -216,13 +217,16 @@ class SeriPortOkuyucu(QMainWindow):
 
 
     def load_stylesheet(self):
-        with open("assets/styles/settings.qss", "r") as file:
+        with open(os.path.dirname(os.path.abspath(__file__))+"/assets/styles/slider.qss", "r") as file:
             #return file.read()
             style_sheet=file.read()
             self.settings.setStyleSheet(style_sheet)
             self.infoButton.setStyleSheet(style_sheet)
+            self.HVProgressBar.setStyleSheet(style_sheet)
+        print("aa")
         self.settings.update()
         self.infoButton.update()
+        self.HVProgressBar.update()
         
         
     def load_stylesheet2(self):
