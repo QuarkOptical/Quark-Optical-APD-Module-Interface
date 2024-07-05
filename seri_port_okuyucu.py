@@ -200,7 +200,7 @@ class SeriPortOkuyucu(QMainWindow):
         self.configureButton.clicked.connect(self.send_configuration)
         self.addToolButton.clicked.connect(self.upload_data)
         self.refreshButton.clicked.connect(self.populateSerialPorts)
-        self.settings.clicked.connect(self.test)
+
 
     def enable_terminal(self):
         self.sendLineEdit.setEnabled(True)
@@ -220,11 +220,11 @@ class SeriPortOkuyucu(QMainWindow):
         with open(os.path.dirname(os.path.abspath(__file__))+"/assets/styles/slider.qss", "r") as file:
             #return file.read()
             style_sheet=file.read()
-            self.settings.setStyleSheet(style_sheet)
+
             self.infoButton.setStyleSheet(style_sheet)
             self.HVProgressBar.setStyleSheet(style_sheet)
         print("aa")
-        self.settings.update()
+
         self.infoButton.update()
         self.HVProgressBar.update()
         

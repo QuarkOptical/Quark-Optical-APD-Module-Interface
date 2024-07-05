@@ -60,8 +60,5 @@ QToolButton{
     background:#d0ebff
 }
 
-QComboBox{
-    border:1px solid black;
-    background:#d0ebff
-}
+
 
