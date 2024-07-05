@@ -356,7 +356,7 @@ class SeriPortOkuyucu(QMainWindow):
         print(f"Error: {error}")
 
     def send_data(self):
-        if self.sendLineEdit.text()=='/help' or '/h':
+        if self.sendLineEdit.text()=='/help' or self.sendLineEdit.text()== '/h':
             help_text="""
                 Commands:<br>
                 w/VOLTAGE=(number) - Sets desired voltage to number.<br>
