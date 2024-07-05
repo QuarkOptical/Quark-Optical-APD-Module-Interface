@@ -59,7 +59,7 @@ class SeriPortOkuyucu(QMainWindow):
         self.listeDosyaAdlari()
 
     def setup_ui(self):
-        uic.loadUi("ui/main_window.ui", self)
+        uic.loadUi(os.path.dirname(os.path.abspath(__file__))+"/ui/main_window.ui", self)
         self.setWindowTitle("APD Interface - Quark Optical")
         #self.setFixedHeight(600)
         #self.setFixedWidth(1000)
