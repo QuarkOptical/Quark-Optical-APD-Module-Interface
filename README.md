@@ -20,7 +20,7 @@ Welcome to the repository for the APD Module Interface Application, a project by
     ```
 2. Navigate to the project directory:
     ```bash
-    cd APD-Module-Interface
+    cd Quark-Optical-APD-Module-Interface
     ```
 3. Install the required dependencies:
     ```bash
