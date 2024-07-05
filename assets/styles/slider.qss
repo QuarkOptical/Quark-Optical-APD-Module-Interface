@@ -1,0 +1,67 @@
+QSlider::groove:horizontal {
+                border: 1px solid #ff5151;
+                height: 0px;
+                background: #378185;
+                margin: 1px 0;
+                border-radius: 4px;
+            }
+QSlider::handle:horizontal {
+                background:#096bb2;
+                border: 1px solid #096bb2;
+                width: 4px;
+                border-radius: 3px;
+                margin: -7px -1;
+            }
+QSlider::handle:horizontal:hover {
+                background: #07426c;
+                border: 1px solid #07426c;
+            }
+QSlider::sub-page:horizontal {
+                background: #add4f0;
+                border: 1px solid #87b6d7;
+                height: 8px;
+                border-radius: 4px;
+            }
+QSlider::add-page:horizontal {
+                background: #d5d5d5;
+                border: 1px solid #cccccc;
+                height: 7px;
+                border-radius: 4px;
+            }
+
+
+QProgressBar {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+     /* Arkaplan rengi */
+    
+    height:1px;
+
+}
+
+QProgressBar::chunk {
+    background-color: #4197d4; /* İlerleme rengi */
+    width: 20px; /* İlerleme çubuğu kalınlığı */
+}
+
+
+/*QPushButton{
+    border: 1px solid black;
+    border-radius: 10px;
+    height:22px;
+    background:#d0ebff
+}*/
+
+QToolButton{
+    border: 1px solid black;
+    border-radius: 1px;
+    height:15px;
+    background:#d0ebff
+}
+
+QComboBox{
+    border:1px solid black;
+    background:#d0ebff
+}
+
