@@ -155,8 +155,8 @@ class SeriPortOkuyucu(QMainWindow):
         self.serial_thread = None
         self.is_connected = False
         self.is_started = False
-        self.qss_file = "assets/styles/slider.qss"
-        self.qss_file2 = "assets/styles/settings.qss"
+        self.qss_file = os.path.dirname(os.path.abspath(__file__))+"/assets/styles/slider.qss"
+        self.qss_file2 = os.path.dirname(os.path.abspath(__file__))+"/assets/styles/settings.qss"
 
         self.timer = QTimer()
         self.terminal_timer=QTimer()
