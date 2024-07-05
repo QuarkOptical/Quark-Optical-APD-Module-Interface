@@ -16,7 +16,7 @@ Welcome to the repository for the APD Module Interface Application, a project by
 
 1. Clone this repository:
     ```bash
-    git clone https://github.com/QuarkOptical/APD-Module-Interface.git
+    git clone https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface.git
     ```
 2. Navigate to the project directory:
     ```bash
