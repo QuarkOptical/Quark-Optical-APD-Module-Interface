@@ -156,7 +156,6 @@ The Set Configuration Section allows users to configure the necessary parameters
 
     ![Select File Dropdown](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/b39804a8-e04f-482b-94e6-7b7cacc01833)
 
-
 4. **Add File Manually Button:**
     - Click on the "Add File Manually" button to create a new configuration file.
     - A dialog window will appear prompting you to enter the necessary values:
@@ -169,7 +168,6 @@ The Set Configuration Section allows users to configure the necessary parameters
 ![Add File Manually Dialog](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/c7121c20-8f3f-44b2-8a1f-6f9228906898)
 
  
-
 5. **Add File on PC Button:**
     - Click on the "Add File on PC" button to upload an existing `.txt` configuration file from your local computer.
     - A file browser window will appear.
