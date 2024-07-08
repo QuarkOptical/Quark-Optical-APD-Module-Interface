@@ -86,7 +86,8 @@ The COM Port Selection section allows you to specify the serial port to which yo
     - A list of available COM ports will appear.
     - Select the COM port corresponding to your APD Module (e.g., COM3, COM4, /dev/ttyUSB0).
 
-    ![COM Port Selection Screenshot](images/com_port_selection_screenshot.png)
+    ![COM Port Selection Screenshot](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/95a4906f-bd3f-416b-be4d-8dc1adace9dc)
+
 
 4. **Refresh Connection:**
     -You can refresh the connected ports by clicking the "Refresh" button.
@@ -205,7 +206,7 @@ Here is an example of what a configuration `.txt` file might look like:
 35.6
 ```
 
-### High Voltage Reading Process Bar
+### High Voltage Reading Progress Bar
 
 The High Voltage Reading Progress Bar section visualizes the current high voltage value within its specified limits (minimum to maximum). This helps users monitor the voltage level of the APD Module and ensures it stays within safe operational parameters.
 
