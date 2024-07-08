@@ -6,15 +6,18 @@ Welcome to the APD Module Interface Application! This guide will help you get st
 
 ## Table of Contents
 
-1. [COM Port Selection Section](#com-port-selection-section)
-2. [Temperature Gauge Chart](#temperature-gauge-chart)
-3. [Set Configuration Section](#set-configuration-section)
-4. [Send Configuration Section](#send-configuration-section)
-5. [High Voltage Reading Progress Bar](#high-voltage-reading-progress-bar)
-6. [Terminal Section](#terminal-section)
-7. [Temperature and Voltage Graphs](#temperature-and-voltage-graphs)
-8. [Contact](#contact)
-9. [Conclusion](#conclusion)
+1. [Installation](#installation)
+2. [Configuration](#configuration)
+3. [Usage](#usage)
+4. [COM Port Selection Section](#com-port-selection-section)
+5. [Temperature Gauge Chart](#temperature-gauge-chart)
+6. [Set Configuration Section](#set-configuration-section)
+7. [Send Configuration Section](#send-configuration-section)
+8. [High Voltage Reading Progress Bar](#high-voltage-reading-progress-bar)
+9. [Terminal Section](#terminal-section)
+10. [Temperature and Voltage Graphs](#temperature-and-voltage-graphs)
+11. [Contact](#contact)
+12. [Conclusion](#conclusion)
 
 ## Installation
 
