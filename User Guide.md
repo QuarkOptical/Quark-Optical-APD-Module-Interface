@@ -325,6 +325,8 @@ Here are some example commands you can enter:
   ```plaintext
   w/CURRENT_VOLTAGE=115.2
   r/MAX_TEMP
+   ```
+
 
 
 ## Temperature and Voltage Graphs
