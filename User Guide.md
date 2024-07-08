@@ -6,11 +6,15 @@ Welcome to the APD Module Interface Application! This guide will help you get st
 
 ## Table of Contents
 
-1. [Installation](#installation)
-2. [Configuration](#configuration)
-3. [Usage](#usage)
-4. [Troubleshooting](#troubleshooting)
-5. [Contact](#contact)
+1. [COM Port Selection Section](#com-port-selection-section)
+2. [Temperature Gauge Chart](#temperature-gauge-chart)
+3. [Set Configuration Section](#set-configuration-section)
+4. [Send Configuration Section](#send-configuration-section)
+5. [High Voltage Reading Progress Bar](#high-voltage-reading-progress-bar)
+6. [Terminal Section](#terminal-section)
+7. [Temperature and Voltage Graphs](#temperature-and-voltage-graphs)
+8. [Contact](#contact)
+9. [Conclusion](#conclusion)
 
 ## Installation
 
@@ -376,6 +380,18 @@ The Temperature and Voltage Graphs section allows users to visualize temperature
 - **Incorrect Data Display:**
   - Verify the correct mapping of data points to the graph.
   - Ensure the units and scales are correctly configured.
+
+### Contact
+
+If you have any questions, need assistance, or would like to provide feedback, please feel free to reach out to us. We are here to help and ensure you have a smooth experience with our APD Module Interface Application.
+
+#### Contact Information
+
+- **Email:** info@quarkoptical.com
+- **Phone:** +90 850 309 98 09
+- **Address:** Sanayi, Teknopark Blv No:1/4C İç Kapı No:115, 34906 Pendik/İstanbul
+
+For the latest updates and information, visit our [website](http://www.quarkoptical.com) or follow us on social media.
 
 
 ### Conclusion
