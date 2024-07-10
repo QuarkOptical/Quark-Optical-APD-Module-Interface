@@ -46,19 +46,8 @@ QProgressBar::chunk {
 }
 
 
+
 /*QPushButton{
-    border: 1px solid black;
-    border-radius: 10px;
-    height:22px;
-    background:#d0ebff
+    background-color:rgba(9,107,178, 0)
+
 }*/
-
-QToolButton{
-    border: 1px solid black;
-    border-radius: 1px;
-    height:15px;
-    background:#d0ebff
-}
-
-
-

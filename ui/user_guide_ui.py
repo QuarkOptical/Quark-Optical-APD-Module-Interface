@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'd:\QT WORKSPACE\deneme1\Quark-Optical-APD-Module-Interface\ui\user_guide.ui'
+# Form implementation generated from reading ui file 'c:\Users\baris\Desktop\Yeni klasör\ui\user_guide.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.0
 #
@@ -19,8 +19,24 @@ class Ui_Dialog(object):
         sizePolicy.setHeightForWidth(Dialog.sizePolicy().hasHeightForWidth())
         Dialog.setSizePolicy(sizePolicy)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("d:\\QT WORKSPACE\\deneme1\\Quark-Optical-APD-Module-Interface\\ui\\../assets/img/logo yazısız.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("c:\\Users\\baris\\Desktop\\Yeni klasör\\ui\\../assets/img/logo yazısız.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         Dialog.setWindowIcon(icon)
+        self.gridLayout = QtWidgets.QGridLayout(Dialog)
+        self.gridLayout.setContentsMargins(10, 10, 10, -1)
+        self.gridLayout.setObjectName("gridLayout")
+        self.scrollArea = QtWidgets.QScrollArea(parent=Dialog)
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setObjectName("scrollArea")
+        self.scrollAreaWidgetContents = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 803, 509))
+        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.scrollAreaWidgetContents)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.textBrowser = QtWidgets.QTextBrowser(parent=self.scrollAreaWidgetContents)
+        self.textBrowser.setObjectName("textBrowser")
+        self.gridLayout_2.addWidget(self.textBrowser, 0, 0, 1, 1)
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+        self.gridLayout.addWidget(self.scrollArea, 0, 0, 1, 1)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)

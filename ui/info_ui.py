@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'd:\QT WORKSPACE\deneme1\Quark-Optical-APD-Module-Interface\ui\info.ui'
+# Form implementation generated from reading ui file 'c:\Users\baris\Desktop\Yeni klasör\ui\info.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.0
 #
@@ -19,7 +19,7 @@ class Ui_Dialog(object):
         sizePolicy.setHeightForWidth(Dialog.sizePolicy().hasHeightForWidth())
         Dialog.setSizePolicy(sizePolicy)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("d:\\QT WORKSPACE\\deneme1\\Quark-Optical-APD-Module-Interface\\ui\\../assets/img/logo yazısız.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("c:\\Users\\baris\\Desktop\\Yeni klasör\\ui\\../assets/img/logo yazısız.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         Dialog.setWindowIcon(icon)
         self.gridLayout = QtWidgets.QGridLayout(Dialog)
         self.gridLayout.setObjectName("gridLayout")
@@ -108,7 +108,7 @@ class Ui_Dialog(object):
         self.label_3.setSizePolicy(sizePolicy)
         self.label_3.setMaximumSize(QtCore.QSize(100, 100))
         self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("d:\\QT WORKSPACE\\deneme1\\Quark-Optical-APD-Module-Interface\\ui\\../assets/img/Logo5.png"))
+        self.label_3.setPixmap(QtGui.QPixmap("c:\\Users\\baris\\Desktop\\Yeni klasör\\ui\\../assets/img/Logo5.png"))
         self.label_3.setScaledContents(True)
         self.label_3.setObjectName("label_3")
         self.horizontalLayout_2.addWidget(self.label_3)

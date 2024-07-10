@@ -14,6 +14,8 @@ from about_dialog import AboutDialog
 from user_guide import UserGuide
 from GaugeWidget import GaugeWidget
 
+import webbrowser
+
 class CustomProgressBar(QProgressBar):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -61,12 +63,7 @@ class SeriPortOkuyucu(QMainWindow):
     def setup_ui(self):
         uic.loadUi(os.path.dirname(os.path.abspath(__file__))+"/ui/main_window.ui", self)
         self.setWindowTitle("APD Interface - Quark Optical")
-        #self.setFixedHeight(600)
-        #self.setFixedWidth(1000)
 
-        palette = self.palette()
-        palette.setColor(QPalette.ColorGroup.Normal, QPalette.ColorRole.Window, QColor(255, 255, 255))
-        self.setPalette(palette)
         
         self.minVoltageSlider.setRange(10000,20000)
         self.maxVoltageSlider.setRange(10000,20000)
@@ -105,7 +102,8 @@ class SeriPortOkuyucu(QMainWindow):
         self.HVProgressBar.setFormat( "%v")
         
         self.aaaa.setStyleSheet("background-color: #096bb2;")
-        self.label_4.setStyleSheet("color:white;")
+        self.userGuideButton.setStyleSheet("background-color:#096bb2")
+        #self.label_4.setStyleSheet("color:white;")
         
         self.load_stylesheet()
         
@@ -114,9 +112,7 @@ class SeriPortOkuyucu(QMainWindow):
         
 
         
-    def test(self):
-        print("AAAAAAAAAAAAAAA")
-
+     
     def setup_graphs(self):
         self.tempWidget = pg.PlotWidget()
         self.tempWidget.setTitle("Temperature Graph")
@@ -140,8 +136,12 @@ class SeriPortOkuyucu(QMainWindow):
         self.gaugeLayout.setSpacing(0)
         self.gaugeLayout.setContentsMargins(0, 0, 0, 10)
         self.gaugeWidget = GaugeWidget()
+        
+        
+     
         self.gaugeWidget.setFixedSize(160, 85)
-        self.gaugeLayout.addWidget(self.gaugeWidget)
+        
+        self.gaugeLayout.addWidget(self.gaugeWidget, alignment=Qt.AlignmentFlag.AlignTop)
 
     def initialize_variables(self):
         
@@ -158,7 +158,7 @@ class SeriPortOkuyucu(QMainWindow):
         self.qss_file = os.path.dirname(os.path.abspath(__file__))+"/assets/styles/slider.qss"
         self.qss_file2 = os.path.dirname(os.path.abspath(__file__))+"/assets/styles/slider.qss"
 
-        print(self.qss_file2)
+     
         self.timer = QTimer()
         self.terminal_timer=QTimer()
         self.terminal_timer.setInterval(100)
@@ -207,13 +207,13 @@ class SeriPortOkuyucu(QMainWindow):
         self.sendCommandButton.setEnabled(True)
 
     def show_guide(self):
-        info = UserGuide(parent=self)
-        if info.exec():
-            print("Kayıt edilen veriler:")
+        url = "https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/blob/main/User%20Guide.md"  # Replace with the URL you want to open
+        webbrowser.open(url)
+
     def show_info(self):
         info = AboutDialog(parent=self)
         if info.exec():
-            print("Kayıt edilen veriler:")
+            pass
 
 
     def load_stylesheet(self):
@@ -223,7 +223,7 @@ class SeriPortOkuyucu(QMainWindow):
 
             self.infoButton.setStyleSheet(style_sheet)
             self.HVProgressBar.setStyleSheet(style_sheet)
-        print("aa")
+     
 
         self.infoButton.update()
         self.HVProgressBar.update()
@@ -243,7 +243,7 @@ class SeriPortOkuyucu(QMainWindow):
     def onPortChanged(self, index):
         if self.serial_thread:
             selectedPortName = self.comPorts.currentText()
-            print("Selected port:", selectedPortName)
+            ##print("Selected port:", selectedPortName)
             self.serial_thread.set_port_name(selectedPortName)
 
     def toggle_process(self):
@@ -300,7 +300,7 @@ class SeriPortOkuyucu(QMainWindow):
         if not selected_port:
             QMessageBox.warning(self, "Hata", "Lütfen bir seri port seçin.")
             return
-        print("Starting serial thread")
+        ##print("Starting serial thread")
         self.serial_thread = SerialThread()
         self.serial_thread.set_port_name(selected_port)
         self.serial_thread.start()
@@ -312,7 +312,7 @@ class SeriPortOkuyucu(QMainWindow):
         self.connectButton.setText("Disconnect")
 
     def stop_connection(self):
-        print("Stopping serial thread")
+        #print("Stopping serial thread")
         self.serial_thread.stop()
         self.serial_thread = None
         self.is_connected = False
@@ -357,13 +357,14 @@ class SeriPortOkuyucu(QMainWindow):
         self.time += 0.1
 
     def handle_error(self, error):
-        print(f"Error: {error}")
+        #print(f"Error: {error}")
+        pass
 
     def send_data(self):
         if self.sendLineEdit.text()=='/help' or self.sendLineEdit.text()== '/h':
             help_text="""
                 Commands:<br>
-                w/VOLTAGE=(number) - Sets desired voltage to number.<br>
+                w/CURRENT_VOLTAGE=(number) - Sets desired voltage to number.<br>
                 w/MODE=(number) - Sets operating mode to number.<br>
                 w/MIN_TEMP=(number) - Sets minimum temperature threshold to number.<br>
                 w/MAnumber_TEMP=(number) - Sets maximum temperature threshold to number.<br>
@@ -391,7 +392,7 @@ class SeriPortOkuyucu(QMainWindow):
             data = self.sendLineEdit.text()
             self.serial_thread.port.write(data.encode())
             received=self.serial_thread.port.readline().decode().strip()
-            print(received)
+            #print(received)
             self.terminalTextEdit.append(received)
 
         self.sendLineEdit.setEnabled(False)
@@ -415,7 +416,7 @@ class SeriPortOkuyucu(QMainWindow):
             self.serial_thread.data_received.connect(self.terminalTextEdit.append)
 
             for command in commands:
-                print(command)
+                #print(command)
                 self.serial_thread.send_configure_signal.emit(command)
                 QThread.msleep(10)  # Short delay between commands
 
@@ -444,9 +445,10 @@ class SeriPortOkuyucu(QMainWindow):
                 try:
                     os.makedirs(target_directory, exist_ok=True)
                     shutil.copy(file_path, target_directory)
-                    print(f"{file_path} dosyası {target_directory} dizinine başarıyla kopyalandı.")
+                    #print(f"{file_path} dosyası {target_directory} dizinine başarıyla kopyalandı.")
                 except Exception as e:
-                    print(f"Dosya kopyalama hatası: {e}")
+                    #print(f"Dosya kopyalama hatası: {e}")
+                    pass
         self.listeDosyaAdlari()
 
     def listeDosyaAdlari(self):
@@ -459,7 +461,8 @@ class SeriPortOkuyucu(QMainWindow):
     def show_popup(self):
         dialog = PopupDialog(parent=self)
         if dialog.exec():
-            print("Kayıt edilen veriler:")
+            #print("Kayıt edilen veriler:")
+            pass
 
     def onComboBoxIndexChanged(self, index):
         file="Product Calibrations/"+self.configsComboBox.itemText(index)
@@ -472,12 +475,13 @@ class SeriPortOkuyucu(QMainWindow):
                 sayi3 = float(satirlar[2].strip()) if len(satirlar) > 2 else None
                 sayi4 = float(satirlar[3].strip()) if len(satirlar) > 3 else None
                 
-                print(sayi1,sayi2,sayi3,sayi4,)
-                print(int(sayi1/self.scale))
+                #print(sayi1,sayi2,sayi3,sayi4,)
+                #print(int(sayi1/self.scale))
                 self.minVoltageSlider.setValue(int(sayi1/self.scale))
                 self.maxVoltageSlider.setValue(int(sayi2/self.scale))
                 self.minTempSlider.setValue(int(sayi3/self.scale))
                 self.maxTempSlider.setValue(int(sayi4/self.scale))
 
         except FileNotFoundError:
-            print(f"{file} dosyası bulunamadı.")
+            #print(f"{file} dosyası bulunamadı.")
+            pass

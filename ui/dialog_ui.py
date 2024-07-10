@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'd:\QT WORKSPACE\deneme1\Quark-Optical-APD-Module-Interface\ui\dialog.ui'
+# Form implementation generated from reading ui file 'c:\Users\baris\Desktop\Yeni klasör\ui\dialog.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.0
 #
@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(350, 250)
+        Dialog.resize(331, 250)
         self.verticalLayoutWidget_5 = QtWidgets.QWidget(parent=Dialog)
         self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(10, 10, 312, 180))
         self.verticalLayoutWidget_5.setObjectName("verticalLayoutWidget_5")
@@ -131,7 +131,7 @@ class Ui_Dialog(object):
         self.verticalLayout_5.setStretch(0, 1)
         self.verticalLayout_5.setStretch(1, 4)
         self.horizontalLayoutWidget_3 = QtWidgets.QWidget(parent=Dialog)
-        self.horizontalLayoutWidget_3.setGeometry(QtCore.QRect(200, 200, 121, 31))
+        self.horizontalLayoutWidget_3.setGeometry(QtCore.QRect(150, 200, 169, 31))
         self.horizontalLayoutWidget_3.setObjectName("horizontalLayoutWidget_3")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_3)
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -164,5 +164,5 @@ class Ui_Dialog(object):
         self.maxVoltageLabel_.setText(_translate("Dialog", "Max High Voltage"))
         self.maxTempLabel_.setText(_translate("Dialog", "Min Temperature"))
         self.minTempLabel_.setText(_translate("Dialog", "Max Temperature"))
-        self.saveButton.setText(_translate("Dialog", "Kaydet"))
-        self.cancelButton.setText(_translate("Dialog", "Çıkış"))
+        self.saveButton.setText(_translate("Dialog", "Save"))
+        self.cancelButton.setText(_translate("Dialog", "Cancel"))
