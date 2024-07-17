@@ -30,6 +30,40 @@ QSlider::add-page:horizontal {
             }
 
 
+
+
+QSlider::groove:horizontal:disabled {
+                border: 1px solid #ff5151;
+                height: 0px;
+                background:  lightgray;
+                margin: 1px 0;
+                border-radius: 4px;
+            }
+QSlider::handle:horizontal:disabled {
+                background:gray;
+                border: 1px solid gray;
+                width: 4px;
+                border-radius: 3px;
+                margin: -7px -1;
+            }
+
+QSlider::sub-page:horizontal:disabled {
+                background: lightgray;
+                border: 1px solid lightgray;
+                height: 8px;
+                border-radius: 4px;
+            }
+QSlider::add-page:horizontal:disabled {
+                background: #d5d5d5;
+                border: 1px solid #cccccc;
+                height: 7px;
+                border-radius: 4px;
+            }
+
+
+
+
+
 QProgressBar {
     border: 1px solid black;
     border-radius: 5px;
@@ -41,12 +75,32 @@ QProgressBar {
 }
 
 QProgressBar::chunk {
-    background-color: #4197d4; /* İlerleme rengi */
+    background-color: #4197d4;
+ /* İlerleme rengi */
     width: 20px; /* İlerleme çubuğu kalınlığı */
 }
 
-
-
+QPushButton:hover {
+    background-color: lightgray;
+}
+QPushButton:disabled {
+    background-color: lightgray;
+    color: darkgray;
+}
+QToolButton:hover {
+    background-color: lightgray;
+}
+QToolButton:disabled {
+    background-color: gray;
+    color: darkgray;
+}
+QComboBox:hover {
+    background-color: lightgray;
+}
+QComboBox:disabled {
+    background-color: lightgray;
+    color: gray;
+}
 /*QPushButton{
     background-color:rgba(9,107,178, 0)
 

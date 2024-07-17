@@ -1,12 +1,12 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QLayout
+from PyQt6.QtWidgets import  QWidget
 from PyQt6.QtGui import QPainter, QColor, QFont, QPen
 from PyQt6.QtCore import Qt, QRectF, QSize
 
 class GaugeWidget(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.value = 0  # Set initial value of the gauge
+        self.value = 0 # Set initial value of the gauge
 
     def setValue(self, value):
         self.value = value
@@ -35,8 +35,17 @@ class GaugeWidget(QWidget):
         painter.setPen(pen)
         painter.drawArc(rect, start_angle, -span_angle)
 
-        # Draw the value arc
-        pen.setColor(QColor(9, 107, 178))
+
+
+        if self.value < 20:
+            pen.setColor(QColor(9, 107, 178))  # Blue
+        elif 20<=self.value<30:
+            pen.setColor(QColor(58, 121, 0))  # Green
+        elif 30 <= self.value < 40:
+            pen.setColor(QColor(207,204,27))  # Yellow
+        else:
+            pen.setColor(QColor(160,21,38))  # Red
+
         painter.setPen(pen)
         painter.drawArc(rect, -start_angle, int(-span_angle * (self.value / 70.0)))
 

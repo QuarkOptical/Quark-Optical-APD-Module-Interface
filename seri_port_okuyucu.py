@@ -1,7 +1,7 @@
-from PyQt6.QtWidgets import QMainWindow, QMessageBox, QFileDialog,QLCDNumber,QProgressBar,QLabel,QLayout
-from PyQt6.QtGui import QColor, QPalette,QPainter,QPen
+from PyQt6.QtWidgets import QMainWindow, QMessageBox, QFileDialog,QLabel
 from PyQt6 import uic
-from PyQt6.QtCore import QTimer, QFileSystemWatcher, QThread,Qt
+
+from PyQt6.QtCore import QTimer, QThread,Qt
 from PyQt6.QtSerialPort import QSerialPortInfo
 import pyqtgraph as pg
 import re
@@ -9,44 +9,11 @@ import os
 import shutil
 
 from serial_thread import SerialThread
-from dialog import PopupDialog
+from info_dialog import PopupDialog
 from about_dialog import AboutDialog 
-from user_guide import UserGuide
 from GaugeWidget import GaugeWidget
-
+from CustomProgressBar import CustomProgressBar
 import webbrowser
-
-class CustomProgressBar(QProgressBar):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.setTextVisible(False)
-    
-    def paintEvent(self, event):
-        super().paintEvent(event)
-        
-        painter = QPainter(self)
-        #painter.setRenderHint(QPainter.RenderHint.Antialiasing)
-        
-        # Çizgilerin rengini ve kalınlığını ayarlama
-        pen = QPen(QColor('black'))
-        pen.setWidthF(0.2)
-        painter.setPen(pen)
-        
-        # Ölçek çizgilerini çizme
-        
-        for i in range(1,10 ):
-            x = int(i * self.width() / 10)  # int türüne dönüştürme
-            painter.drawLine(x, 0, x, self.height())
-        
-        painter.end()
-
-
-
-
-
-
-
-
 
 
 class SeriPortOkuyucu(QMainWindow):
@@ -61,10 +28,11 @@ class SeriPortOkuyucu(QMainWindow):
         self.listeDosyaAdlari()
 
     def setup_ui(self):
-        uic.loadUi(os.path.dirname(os.path.abspath(__file__))+"/ui/main_window.ui", self)
+        uic.loadUi("ui/main_window.ui",self)
+        #uic.loadUi(os.path.dirname(os.path.abspath(__file__))+"/ui/main_window.ui", self)
+        #uic.loadUi("/ui/main_window.ui", self)
         self.setWindowTitle("APD Interface - Quark Optical")
 
-        
         self.minVoltageSlider.setRange(10000,20000)
         self.maxVoltageSlider.setRange(10000,20000)
         
@@ -101,16 +69,21 @@ class SeriPortOkuyucu(QMainWindow):
         
         self.HVProgressBar.setFormat( "%v")
         
-        self.aaaa.setStyleSheet("background-color: #096bb2;")
-        self.userGuideButton.setStyleSheet("background-color:#096bb2")
-        #self.label_4.setStyleSheet("color:white;")
-        
-        self.load_stylesheet()
+        self.aaaa.setStyleSheet("background-color: #A9A9A9;")
+
         
         self.configureButton.setEnabled(False)
         self.startProcessButton.setEnabled(False)
         
-
+        self.minVoltageSlider.setEnabled(False)
+        self.maxVoltageSlider.setEnabled(False)
+        self.minTempSlider.setEnabled(False)
+        self.maxTempSlider.setEnabled(False)
+        
+        self.minVoltageSpinBox.setEnabled(False)
+        self.maxVoltageSpinBox.setEnabled(False)
+        self.minTempSpinBox.setEnabled(False)
+        self.maxTempSpinBox.setEnabled(False)
         
      
     def setup_graphs(self):
@@ -147,6 +120,8 @@ class SeriPortOkuyucu(QMainWindow):
         
         self.scale = 0.01
         self.time = 0.0
+        self.status="OKAY"
+        self.previous_status="previous"
         self.times_v = []
         self.times_t = []
         self.is_configuring = False
@@ -155,8 +130,9 @@ class SeriPortOkuyucu(QMainWindow):
         self.serial_thread = None
         self.is_connected = False
         self.is_started = False
-        self.qss_file = os.path.dirname(os.path.abspath(__file__))+"/assets/styles/slider.qss"
-        self.qss_file2 = os.path.dirname(os.path.abspath(__file__))+"/assets/styles/slider.qss"
+        
+        self.qss_file = "assets/styles/slider.qss"
+        self.qss_file2 = "assets/styles/slider.qss"
 
      
         self.timer = QTimer()
@@ -171,11 +147,6 @@ class SeriPortOkuyucu(QMainWindow):
         self.command_timer.timeout.connect(self.send_periodic_command)
         self.command_timer.start(100)
 
-        #self.watcher = QFileSystemWatcher([self.qss_file])
-        #self.watcher.fileChanged.connect(self.load_stylesheet)
-        
-        self.watcher = QFileSystemWatcher([self.qss_file2])
-        self.watcher.fileChanged.connect(self.load_stylesheet)
         
 
     def setup_connections(self):
@@ -200,6 +171,7 @@ class SeriPortOkuyucu(QMainWindow):
         self.configureButton.clicked.connect(self.send_configuration)
         self.addToolButton.clicked.connect(self.upload_data)
         self.refreshButton.clicked.connect(self.populateSerialPorts)
+        self.clearButton.clicked.connect(self.terminalTextEdit.clear)
 
 
     def enable_terminal(self):
@@ -216,19 +188,6 @@ class SeriPortOkuyucu(QMainWindow):
             pass
 
 
-    def load_stylesheet(self):
-        with open(os.path.dirname(os.path.abspath(__file__))+"/assets/styles/slider.qss", "r") as file:
-            #return file.read()
-            style_sheet=file.read()
-
-            self.infoButton.setStyleSheet(style_sheet)
-            self.HVProgressBar.setStyleSheet(style_sheet)
-     
-
-        self.infoButton.update()
-        self.HVProgressBar.update()
-        
-        
     def load_stylesheet2(self):
         with open(self.qss_file, "r") as file:
             return file.read()
@@ -243,7 +202,6 @@ class SeriPortOkuyucu(QMainWindow):
     def onPortChanged(self, index):
         if self.serial_thread:
             selectedPortName = self.comPorts.currentText()
-            ##print("Selected port:", selectedPortName)
             self.serial_thread.set_port_name(selectedPortName)
 
     def toggle_process(self):
@@ -265,6 +223,7 @@ class SeriPortOkuyucu(QMainWindow):
         self.refreshButton.setEnabled(False)
         self.set_controls_enabled(False)
         self.startProcessButton.setText("Stop Process")
+        #self.status="OKAY"
 
     def stop_process(self):
         self.serial_thread.stop_reading()
@@ -278,6 +237,8 @@ class SeriPortOkuyucu(QMainWindow):
         self.refreshButton.setEnabled(True)
         self.set_controls_enabled(True)
         self.startProcessButton.setText("Start Process")
+        self.status="DISABLED"
+        #self.aaaa.setStyleSheet("background-color: #A9A9A9;")
 
     def set_controls_enabled(self, enabled):
         self.minVoltageSlider.setEnabled(enabled)
@@ -298,9 +259,8 @@ class SeriPortOkuyucu(QMainWindow):
     def start_connection(self):
         selected_port = self.comPorts.currentText()
         if not selected_port:
-            QMessageBox.warning(self, "Hata", "Lütfen bir seri port seçin.")
+            QMessageBox.warning(self, "Warning", "Please select a serial port.")
             return
-        ##print("Starting serial thread")
         self.serial_thread = SerialThread()
         self.serial_thread.set_port_name(selected_port)
         self.serial_thread.start()
@@ -310,14 +270,18 @@ class SeriPortOkuyucu(QMainWindow):
         self.HVProgressBar.setEnabled(True)
         self.set_controls_enabled(True)
         self.connectButton.setText("Disconnect")
+        self.setup_config()
+
 
     def stop_connection(self):
-        #print("Stopping serial thread")
         self.serial_thread.stop()
         self.serial_thread = None
         self.is_connected = False
         self.configureButton.setEnabled(False)
         self.startProcessButton.setEnabled(False)
+        self.connectButton.setEnabled(True)
+        self.comPorts.setEnabled(True)
+        self.refreshButton.setEnabled(True)
         self.HVProgressBar.setEnabled(False)
         self.set_controls_enabled(False)
         self.connectButton.setText("Connect")
@@ -328,37 +292,56 @@ class SeriPortOkuyucu(QMainWindow):
             self.serial_thread.toggle_command()
 
     def update_data(self, data):
+        #self.status=re.match(r"i/STATUS=(\d+)", data)
         temp_match = re.match(r"i/CURRENT_TEMP=(\d+)", data)
         hv_match = re.match(r"i/CURRENT_HV=(\d+)", data)
-
-        if temp_match:
-            temp_value = float(temp_match.group(1)) / 100
-            self.temp_data.append(temp_value)
-            self.times_t.append(self.time)
-            self.tempWidget.plot(self.times_t,self.temp_data, pen=self.temp_pen, clear=True)
-            self.gaugeWidget.setValue(temp_value)
-            self.tempWidget.setYRange(temp_value-5,temp_value+5)
+        
+        if self.status!=self.previous_status:
+            self.previous_status=self.status
+            if self.status=="ERROR":
+                self.aaaa.setStyleSheet("background-color: #A01526;")
+            elif self.status=="CALIBRATING":
+                self.aaaa.setStyleSheet("background-color: #096bb2;")
+            elif self.status=="OKAY":
+                self.aaaa.setStyleSheet("background-color: #3A7900;")
+            elif self.status=="DISABLED":
+                self.aaaa.setStyleSheet("background-color: #A9A9A9;")
             
-            if self.time>=30:
-                self.tempWidget.setXRange(self.time-20,self.time)
+        if self.status=="ERROR":
+            pass
+        elif self.status=="CALIBRATING":
+            pass
+        elif self.status=="OKAY":
+            if temp_match:
+                temp_value = float(temp_match.group(1)) / 100
+                self.temp_data.append(temp_value)
+                self.times_t.append(self.time)
+                self.tempWidget.plot(self.times_t,self.temp_data, pen=self.temp_pen, clear=True)
+                self.gaugeWidget.setValue(temp_value)
+                self.tempWidget.setYRange(temp_value-5,temp_value+5)
+                
+                if self.time>=30:
+                    self.tempWidget.setXRange(self.time-20,self.time)
 
-        elif hv_match:
-            hv_value = float(hv_match.group(1)) / 100
-            self.hv_data.append(hv_value)
-            self.times_v.append(self.time)
-            self.voltWidget.plot(self.times_v, self.hv_data, pen=self.volt_pen, clear=True)
-            self.HVProgressBar.setValue(int(hv_value))
-            self.HVReadingLabel.setText(f"High Voltage Reading:{hv_value}")
-            self.voltWidget.setYRange(hv_value-100,hv_value+100)
-            if self.time>=30:
-                self.voltWidget.setXRange(self.time-20,self.time)
+            elif hv_match:
+                hv_value = float(hv_match.group(1)) / 100
+                self.hv_data.append(hv_value)
+                self.times_v.append(self.time)
+                self.voltWidget.plot(self.times_v, self.hv_data, pen=self.volt_pen, clear=True)
+                self.HVProgressBar.setValue(int(hv_value))
+                self.HVReadingLabel.setText(f"High Voltage Reading:{hv_value}")
+                self.voltWidget.setYRange(hv_value-100,hv_value+100)
+                if self.time>=30:
+                    self.voltWidget.setXRange(self.time-20,self.time)
         
     
         self.time += 0.1
 
     def handle_error(self, error):
-        #print(f"Error: {error}")
-        pass
+        self.stop_process()
+        self.stop_connection()
+        
+        QMessageBox.critical(self, "Error", f"Error:\n{error}")
 
     def send_data(self):
         if self.sendLineEdit.text()=='/help' or self.sendLineEdit.text()== '/h':
@@ -387,7 +370,12 @@ class SeriPortOkuyucu(QMainWindow):
         
                 /clear - Clears  terminal.<br>"""
             self.terminalTextEdit.append(help_text)
-                   
+        
+        elif self.sendLineEdit.text() in ["clear","/clear","cls"]:
+            self.terminalTextEdit.clear()
+    
+    
+                        
         elif self.is_connected:
             data = self.sendLineEdit.text()
             self.serial_thread.port.write(data.encode())
@@ -416,7 +404,7 @@ class SeriPortOkuyucu(QMainWindow):
             self.serial_thread.data_received.connect(self.terminalTextEdit.append)
 
             for command in commands:
-                #print(command)
+
                 self.serial_thread.send_configure_signal.emit(command)
                 QThread.msleep(10)  # Short delay between commands
 
@@ -440,14 +428,15 @@ class SeriPortOkuyucu(QMainWindow):
             selected_files = file_dialog.selectedFiles()
             if selected_files:
                 file_path = selected_files[0]
-                current_directory = os.path.dirname(os.path.abspath(__file__))
-                target_directory = os.path.join(current_directory, "Product Calibrations")
+                
+                target_directory = "Product Calibrations"
                 try:
                     os.makedirs(target_directory, exist_ok=True)
                     shutil.copy(file_path, target_directory)
                     #print(f"{file_path} dosyası {target_directory} dizinine başarıyla kopyalandı.")
                 except Exception as e:
                     #print(f"Dosya kopyalama hatası: {e}")
+                    QMessageBox.warning(self,"Error" ,f"File copy error:{str(e)}")
                     pass
         self.listeDosyaAdlari()
 
@@ -460,8 +449,9 @@ class SeriPortOkuyucu(QMainWindow):
 
     def show_popup(self):
         dialog = PopupDialog(parent=self)
+        dialog.setWindowTitle("Add Configuration Manually")
         if dialog.exec():
-            #print("Kayıt edilen veriler:")
+
             pass
 
     def onComboBoxIndexChanged(self, index):
@@ -474,14 +464,61 @@ class SeriPortOkuyucu(QMainWindow):
                 sayi2 = float(satirlar[1].strip()) if len(satirlar) > 1 else None
                 sayi3 = float(satirlar[2].strip()) if len(satirlar) > 2 else None
                 sayi4 = float(satirlar[3].strip()) if len(satirlar) > 3 else None
-                
-                #print(sayi1,sayi2,sayi3,sayi4,)
-                #print(int(sayi1/self.scale))
                 self.minVoltageSlider.setValue(int(sayi1/self.scale))
                 self.maxVoltageSlider.setValue(int(sayi2/self.scale))
                 self.minTempSlider.setValue(int(sayi3/self.scale))
                 self.maxTempSlider.setValue(int(sayi4/self.scale))
 
         except FileNotFoundError:
-            #print(f"{file} dosyası bulunamadı.")
-            pass
+            QMessageBox.warning(self, "Warning", f"{file} not found.")
+
+    
+    def setup_config(self):
+
+        if self.is_connected:
+            self.is_configuring = True
+            commands = [
+                "",
+                "r/MIN_TEMP",
+                "r/MAX_TEMP",
+                "r/MIN_HV",
+                "r/MAX_HV",
+            ]
+
+            self.serial_thread.start_configure()
+            self.serial_thread.data_received.connect(self.setupconfigsection)
+
+            for command in commands:
+                self.serial_thread.send_configure_signal.emit(command)
+                QThread.msleep(10)  # Short delay between commands
+
+            self.serial_thread.data_received.disconnect(self.setupconfigsection)
+            self.serial_thread.stop_configure()
+            self.is_configuring = False 
+
+    def setupconfigsection(self,data):
+
+        min_temp_match = re.match(r"i/MIN_TEMP=(\d+)", data)
+        max_temp_match = re.match(r"i/MAX_TEMP=(\d+)", data)
+        min_hv_match = re.match(r"i/MIN_HV=(\d+)", data)
+        max_hv_match = re.match(r"i/MAX_HV=(\d+)", data)
+        
+        if min_temp_match:
+            min_temp_value = float(min_temp_match.group(1))
+            self.minTempSpinBox.setValue(min_temp_value*self.scale)
+ 
+            
+        elif max_temp_match:
+            max_temp_value = float(max_temp_match.group(1))
+            self.maxTempSpinBox.setValue(max_temp_value*self.scale)
+
+            
+        elif min_hv_match:
+            min_hv_value = float(min_hv_match.group(1)) 
+            self.minVoltageSpinBox.setValue(min_hv_value*self.scale)
+            
+        elif max_hv_match:
+            max_hv_value = float(max_hv_match.group(1))
+            self.maxVoltageSpinBox.setValue(max_hv_value*self.scale)
+        
+  

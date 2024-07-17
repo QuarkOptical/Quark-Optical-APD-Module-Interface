@@ -2,6 +2,11 @@ import sys
 from PyQt6.QtWidgets import QApplication
 from seri_port_okuyucu import SeriPortOkuyucu
 from PyQt6.QtGui import QPalette, QColor
+
+
+
+
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
 
@@ -28,4 +33,3 @@ if __name__ == '__main__':
     pencere = SeriPortOkuyucu()
     pencere.show()
     sys.exit(app.exec())
-
