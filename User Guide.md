@@ -62,7 +62,8 @@ Connect the APD Module to your system via the serial port.
 
 ## Usage
 
-![Interface Screenshot](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/0a425ec3-91f0-410b-b695-099509501fad)
+![Interface Screenshot](https://github.com/user-attachments/assets/478cb85e-2019-4896-8cb3-56d9bfededfd)
+
 
 
 ## COM Port Selection Section
@@ -112,7 +113,9 @@ The Temperature Gauge Chart section provides users with real-time temperature re
     - It includes a needle that points to the current temperature value on a circular scale.
     - The scale is color-coded to indicate safe, warning, and danger temperature ranges.
       
-![Temperature Gauge Chart](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/da20d9af-b44f-4bf5-b10b-7a52518b1bbd)
+![Temperature Gauge Chart](https://github.com/user-attachments/assets/90f795f5-5b63-4e02-92cf-b58b3f420d7a)
+
+
 
 3. **Reading the Temperature:**
     - The current temperature is indicated by the position on the gauge.
@@ -232,7 +235,10 @@ The High Voltage Reading Progress Bar section visualizes the current high voltag
     - It displays a filled portion representing the current voltage value within the minimum and maximum limits.
     - The minimum and maximum limits are displayed as markers or labels on the progress bar.
 
-![High Voltage Progress Bar](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/b011dfa0-a098-4023-b7d6-8de3c1ffe40b)
+![High Voltage Progress Bar](https://github.com/user-attachments/assets/14da9bd1-1f43-4324-b77e-15b3ffb77215)
+
+
+
 
 ### Troubleshooting High Voltage Reading Issues
 
@@ -259,18 +265,18 @@ The Send Configuration Section allows users to configure and send parameters to 
       - **Min Temperature:** Adjust the slider or enter a value in the spin box for the minimum temperature.
       - **Max Temperature:** Adjust the slider or enter a value in the spin box for the maximum temperature.
 
-    ![Send Configuration Sliders and Spin Boxes](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/0c7f3e6b-43f6-42bc-aac3-35e39dbdf3c7)
+  ![Send Configuration Sliders and Spin Boxes](https://github.com/user-attachments/assets/3ac7b70e-86f2-40cf-98bf-1ee3e060ff3a)
 
 
-3. **Send Configuration Button:**
+
+
+4. **Send Configuration Button:**
     - Click the "Send Configuration" button to send the configured parameters to the serial port.
     - This action configures the APD Module with the selected values for minimum and maximum voltage, as well as minimum and maximum temperature.
 
-4. **Start Process Button:**
+5. **Start Process Button:**
     - Click the "Start Process" button to initiate the data visualization and experiment process.
     - Once clicked, this button disables the configure sliders and double spin boxes to prevent further configuration changes during operation.
-
-    ![Send Configuration Buttons](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/eedc05c2-54b7-4e86-81da-17a2e2a84b31)
 
 
 ### Troubleshooting Configuration Issues
