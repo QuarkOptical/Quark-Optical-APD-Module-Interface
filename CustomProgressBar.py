@@ -1,4 +1,4 @@
-from PyQt6.QtGui import QColor, QPalette,QPainter,QPen
+from PyQt6.QtGui import QColor,QPainter,QPen
 from PyQt6.QtWidgets import QProgressBar
 
 

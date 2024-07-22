@@ -8,7 +8,6 @@ class SerialThread(QThread):
     send_configure_signal = pyqtSignal(str)
     setup_config_signal=pyqtSignal(str)
     
-    
     def __init__(self, parent=None):
         super().__init__(parent)
         self.port = None
@@ -34,8 +33,6 @@ class SerialThread(QThread):
     def set_port_name(self, port_name):
         self.port_name = port_name
     
-    
-
     def stop(self):
         self.reading = False
         if self.port:
@@ -48,12 +45,10 @@ class SerialThread(QThread):
         self.reading = False
 
     def run(self):
-        print("Thread started")
         try:
             if not self.port_name:
-                raise serial.SerialException("Port name is not set")
+                QMessageBox.warning(self, "Warning", "Please select a serial port.")
             self.port = serial.Serial(self.port_name, 115200)
-            print("Serial port opened")
             while True:
                 if self.reading:
                     if self.port.in_waiting > 0:
@@ -63,10 +58,9 @@ class SerialThread(QThread):
                 QThread.msleep(10)
         except serial.SerialException as e:
             self.error_occurred.emit(str(e))
-           # QMessageBox.warning(self,"Error" ,f"Serial exception:{str(e)}")
+         
         except Exception as e:
             self.error_occurred.emit(str(e))
-           # QMessageBox.warning(self,"Error" ,f"Exception:{str(e)}")
 
     def send_command(self):
         if self.port and self.port.is_open:
@@ -74,29 +68,37 @@ class SerialThread(QThread):
                 self.port.write((self.current_command).encode())         
             except Exception as e:
                 self.error_occurred.emit(str(e))
-                #QMessageBox.warning(self,"Error" ,f"Exception:{str(e)}")
+    
+    def send_data(self,data):
+        if self.port and self.port.is_open:
+            try:
+                self.port.write((data).encode())         
+            except Exception as e:
+                self.error_occurred.emit(str(e))
+    
     def toggle_command(self):
-        if self.current_command == "r/CURRENT_TEMP":
-            self.current_command = "r/CURRENT_HV"
-        else:
+        if self.current_command == "r/DEVICE_STATUS":
             self.current_command = "r/CURRENT_TEMP"
+        elif self.current_command == "r/CURRENT_TEMP":
+            self.current_command = "r/CURRENT_HV"
+        elif self.current_command == "r/CURRENT_HV":
+            self.current_command = "r/DEVICE_STATUS"
 
     def send_configuration(self, command):
         if self.port and self.port.is_open:
-            try:
-                self.port.write((command).encode())
-                response = self.port.readline().decode().strip()
+            self.port.write((command).encode())
+            self.port.timeout = 1
+            response = self.port.readline().decode().strip()  
+            if response:
                 self.data_received.emit(response)
-            except Exception as e:
-                self.error_occurred.emit(str(e))
-                QMessageBox.warning(self,"Error" ,f"Exception:{str(e)}")
+            else:
+                self.error_occurred.emit("No response from the serial port.")
         
     def setup_config(self, command):
         if self.port and self.port.is_open:
             try:
                 self.port.write((command).encode())
-                response = self.port.readline().decode().strip()
-                
+              
             except Exception as e:
                 self.error_occurred.emit(str(e))
                 QMessageBox.warning(self,"Error" ,f"Exception:{str(e)}")

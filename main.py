@@ -1,18 +1,12 @@
 import sys
 from PyQt6.QtWidgets import QApplication
-from seri_port_okuyucu import SeriPortOkuyucu
+from main_window import MainWindow
 from PyQt6.QtGui import QPalette, QColor
-
-
-
-
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
 
     app.setStyle('Fusion')
-
-    # Create and set a custom palette
     palette = QPalette()
     palette.setColor(QPalette.ColorRole.Window, QColor(255, 255, 255))  # Window background
     palette.setColor(QPalette.ColorRole.WindowText, QColor(0, 0, 0))  # Text on the window
@@ -30,6 +24,6 @@ if __name__ == '__main__':
     app.setPalette(palette)
 
 
-    pencere = SeriPortOkuyucu()
+    pencere = MainWindow()
     pencere.show()
     sys.exit(app.exec())

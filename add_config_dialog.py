@@ -1,7 +1,6 @@
 from PyQt6.QtWidgets import QDialog
 from PyQt6 import uic
 import os
-
 class PopupDialog(QDialog):
     def __init__(self,parent):
         super().__init__(parent)
@@ -44,7 +43,7 @@ class PopupDialog(QDialog):
             file.write(f"{self.maxTempSpinBox_.value()}\n")
          
         self.accept()
-        self.parent().listeDosyaAdlari()
+        self.parent().list_files()
     
     def on_close(self):
         self.reject()
@@ -55,3 +54,4 @@ class PopupDialog(QDialog):
     
     def spinboxChange(self,value,slider):
         slider.setValue(int(value/self.scale))
+
