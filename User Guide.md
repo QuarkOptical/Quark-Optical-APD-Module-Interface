@@ -62,7 +62,8 @@ Connect the APD Module to your system via the serial port.
 
 ## Usage
 
-![Interface Screenshot](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/0a425ec3-91f0-410b-b695-099509501fad)
+![Interface Screenshot](https://github.com/user-attachments/assets/478cb85e-2019-4896-8cb3-56d9bfededfd)
+
 
 
 ## COM Port Selection Section
@@ -80,16 +81,20 @@ The COM Port Selection section allows you to specify the serial port to which yo
     - Note the COM port number assigned to your device. You can find this in your system’s Device Manager (Windows) or using the `ls /dev/tty.*` command (Mac/Linux).
 
    ![Device Manager Screenshot](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/a813c30b-9777-4880-a101-569d6c7902cb)
+   
 
-3. **Select the COM Port:**
+4. **Select the COM Port:**
     - Click on the COM Port Selection Dropdown.
     - A list of available COM ports will appear.
     - Select the COM port corresponding to your APD Module (e.g., COM3, COM4, /dev/ttyUSB0).
 
-    ![COM Port Selection Screenshot](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/95a4906f-bd3f-416b-be4d-8dc1adace9dc)
+
+   ![COM Port Selection Screenshot](https://github.com/user-attachments/assets/9a530894-626b-4bcc-ab17-31a5dda40603)
+
+   
 
 
-4. **Refresh Connection:**
+6. **Refresh Connection:**
     -You can refresh the connected ports by clicking the "Refresh" button.
 
 
@@ -108,7 +113,9 @@ The Temperature Gauge Chart section provides users with real-time temperature re
     - It includes a needle that points to the current temperature value on a circular scale.
     - The scale is color-coded to indicate safe, warning, and danger temperature ranges.
       
-![Temperature Gauge Chart](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/da20d9af-b44f-4bf5-b10b-7a52518b1bbd)
+![Temperature Gauge Chart](https://github.com/user-attachments/assets/90f795f5-5b63-4e02-92cf-b58b3f420d7a)
+
+
 
 3. **Reading the Temperature:**
     - The current temperature is indicated by the position on the gauge.
@@ -120,6 +127,9 @@ The Temperature Gauge Chart section provides users with real-time temperature re
     - The warning and danger ranges are marked in yellow and red, respectively.
 
 ### Actions Based on Temperature Readings
+
+- **Safe Range (Blue):**
+  - If the temperature is within the blue range, the APD Module is operating normally.
 
 - **Safe Range (Green):**
   - If the temperature is within the green range, the APD Module is operating normally.
@@ -162,9 +172,11 @@ The Set Configuration Section allows users to configure the necessary parameters
     - The dropdown will display a list of available `.txt` configuration files.
     - Select the desired configuration file that contains the necessary values.
 
-    ![Select File Dropdown](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/b39804a8-e04f-482b-94e6-7b7cacc01833)
+   ![Select File Dropdown](https://github.com/user-attachments/assets/5526498d-5223-4f6e-8f56-561a4d5fc28a)
 
-4. **Add File Manually Button:**
+
+
+5. **Add File Manually Button:**
     - Click on the "Add File Manually" button to create a new configuration file.
     - A dialog window will appear prompting you to enter the necessary values:
       - Min Voltage
@@ -173,10 +185,12 @@ The Set Configuration Section allows users to configure the necessary parameters
       - Max Temperature
     - Enter the values and save the configuration file.
     - 
-![Add File Manually Dialog](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/c7121c20-8f3f-44b2-8a1f-6f9228906898)
+
+![Add File Manually Dialog](https://github.com/user-attachments/assets/f21067b3-5a3b-445a-ae41-c870d45219ea)
+
 
  
-5. **Add File on PC Button:**
+6. **Add File on PC Button:**
     - Click on the "Add File on PC" button to upload an existing `.txt` configuration file from your local computer.
     - A file browser window will appear.
     - Navigate to the location of the `.txt` file on your computer and select it.
@@ -221,7 +235,10 @@ The High Voltage Reading Progress Bar section visualizes the current high voltag
     - It displays a filled portion representing the current voltage value within the minimum and maximum limits.
     - The minimum and maximum limits are displayed as markers or labels on the progress bar.
 
-![High Voltage Progress Bar](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/b011dfa0-a098-4023-b7d6-8de3c1ffe40b)
+![High Voltage Progress Bar](https://github.com/user-attachments/assets/14da9bd1-1f43-4324-b77e-15b3ffb77215)
+
+
+
 
 ### Troubleshooting High Voltage Reading Issues
 
@@ -248,18 +265,18 @@ The Send Configuration Section allows users to configure and send parameters to 
       - **Min Temperature:** Adjust the slider or enter a value in the spin box for the minimum temperature.
       - **Max Temperature:** Adjust the slider or enter a value in the spin box for the maximum temperature.
 
-    ![Send Configuration Sliders and Spin Boxes](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/0c7f3e6b-43f6-42bc-aac3-35e39dbdf3c7)
+  ![Send Configuration Sliders and Spin Boxes](https://github.com/user-attachments/assets/3ac7b70e-86f2-40cf-98bf-1ee3e060ff3a)
 
 
-3. **Send Configuration Button:**
+
+
+4. **Send Configuration Button:**
     - Click the "Send Configuration" button to send the configured parameters to the serial port.
     - This action configures the APD Module with the selected values for minimum and maximum voltage, as well as minimum and maximum temperature.
 
-4. **Start Process Button:**
+5. **Start Process Button:**
     - Click the "Start Process" button to initiate the data visualization and experiment process.
     - Once clicked, this button disables the configure sliders and double spin boxes to prevent further configuration changes during operation.
-
-    ![Send Configuration Buttons](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/eedc05c2-54b7-4e86-81da-17a2e2a84b31)
 
 
 ### Troubleshooting Configuration Issues
@@ -282,7 +299,8 @@ The Terminal Section allows users to enter specified commands and receive respon
 1. **Command Input:**
    - Enter commands in the text area below. Commands should follow the specified format.
 
-  ![Command Input](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/3ffa47ca-0c08-4efa-9c5e-3473d9b4b734)
+  ![Terminal Section](https://github.com/user-attachments/assets/ea54766a-3f65-49c8-9d0f-338c19eecc52)
+
 
 
 2. **Command Format:**
@@ -311,7 +329,15 @@ The Terminal Section allows users to enter specified commands and receive respon
      /clear - Clears the terminal.
      ```
 
-3. **Response Display:**
+3. **Terminal Buttons**
+   -Send Command Button: Sends the written command with serial port.
+   -Dump Button: Displays system information dump.
+   -Clear Button: Clears the terminal text.
+
+4. **LED Mode Radio Buttons**
+   - Allows user to select the LED mode.
+
+5. **Response Display:**
    - Responses to commands will be displayed in the area below the command input.
 
    ![Response Display](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/9bc4025f-69e7-4ef3-a134-37d54d5f5448)
@@ -343,7 +369,9 @@ The Temperature and Voltage Graphs section allows users to visualize temperature
    - The graphs show real-time temperature and voltage values plotted over time.
    - Each graph includes axes labels and units for clarity.
 
-![Temperature and Voltage Graphs](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/4a653e03-48a3-4654-82f8-6bc2bbedad84)
+![Temperature and Voltage Graphs](https://github.com/user-attachments/assets/cc1b83ac-f79f-48dc-acd4-9fbfdf2ed63b)
+
+
 
 
 ### Plot Options
