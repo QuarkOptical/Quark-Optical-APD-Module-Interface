@@ -3,11 +3,11 @@ from PyQt6.QtCore import QTimer, QThread
 from PyQt6.QtSerialPort import QSerialPortInfo
 import re
 from ui_setup import setup_ui
-from section_com_port_selection import setup_com_port_selection_connections,start_connection,stop_connection
-from section_configure import setup_configure_connections,start_process,stop_process
-from section_dialogs import setup_dialog_connection
-from section_set_configuration import setup_set_configuration_connection
-from section_terminal import setup_terminal_connections
+from sections.section_com_port_selection import setup_com_port_selection_connections,stop_connection
+from sections.section_configure import setup_configure_connections,stop_process
+from sections.section_dialogs import setup_dialog_connection
+from sections.section_set_configuration import setup_set_configuration_connection
+from sections.section_terminal import setup_terminal_connections
 from PyQt6 import uic
 import os
 
@@ -21,6 +21,7 @@ class MainWindow(QMainWindow):
         setup_dialog_connection(self)
         setup_set_configuration_connection(self)
         setup_terminal_connections(self)
+        self.populateSerialPorts()
     
     def initialize_variables(self):
         uic.loadUi("ui/main_window.ui",self)
@@ -194,7 +195,7 @@ class MainWindow(QMainWindow):
             self.handle_error("Unable to establish a UART connection. Please check the connection and try again. If the issue persists, contact support.")
   
         
-    def set_controls_enabled(self, enabled):
+    def set_controls(self, enabled):
         self.minVoltageSlider.setEnabled(enabled)
         self.maxVoltageSlider.setEnabled(enabled)
         self.minTempSlider.setEnabled(enabled)

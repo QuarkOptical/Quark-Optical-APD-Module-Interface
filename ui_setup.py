@@ -2,8 +2,8 @@ from PyQt6.QtWidgets import QLabel
 from PyQt6 import uic
 import pyqtgraph as pg
 from PyQt6.QtCore import Qt
-from CustomProgressBar import CustomProgressBar
-from GaugeWidget import GaugeWidget
+from custom_ui.CustomProgressBar import CustomProgressBar
+from custom_ui.GaugeWidget import GaugeWidget
 
 def setup_ui(main_window):
     
