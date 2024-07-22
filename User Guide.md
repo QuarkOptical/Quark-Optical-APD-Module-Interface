@@ -299,7 +299,8 @@ The Terminal Section allows users to enter specified commands and receive respon
 1. **Command Input:**
    - Enter commands in the text area below. Commands should follow the specified format.
 
-  ![Command Input](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/3ffa47ca-0c08-4efa-9c5e-3473d9b4b734)
+  ![Terminal Section](https://github.com/user-attachments/assets/ea54766a-3f65-49c8-9d0f-338c19eecc52)
+
 
 
 2. **Command Format:**
@@ -328,7 +329,15 @@ The Terminal Section allows users to enter specified commands and receive respon
      /clear - Clears the terminal.
      ```
 
-3. **Response Display:**
+3. **Terminal Buttons**
+   -Send Command Button: Sends the written command with serial port.
+   -Dump Button: Displays system information dump.
+   -Clear Button: Clears the terminal text.
+
+4. **LED Mode Radio Buttons**
+   - Allows user to select the LED mode.
+
+5. **Response Display:**
    - Responses to commands will be displayed in the area below the command input.
 
    ![Response Display](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/9bc4025f-69e7-4ef3-a134-37d54d5f5448)
@@ -360,7 +369,9 @@ The Temperature and Voltage Graphs section allows users to visualize temperature
    - The graphs show real-time temperature and voltage values plotted over time.
    - Each graph includes axes labels and units for clarity.
 
-![Temperature and Voltage Graphs](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/4a653e03-48a3-4654-82f8-6bc2bbedad84)
+![Temperature and Voltage Graphs](https://github.com/user-attachments/assets/cc1b83ac-f79f-48dc-acd4-9fbfdf2ed63b)
+
+
 
 
 ### Plot Options
