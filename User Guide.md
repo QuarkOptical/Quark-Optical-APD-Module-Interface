@@ -80,16 +80,20 @@ The COM Port Selection section allows you to specify the serial port to which yo
     - Note the COM port number assigned to your device. You can find this in your system’s Device Manager (Windows) or using the `ls /dev/tty.*` command (Mac/Linux).
 
    ![Device Manager Screenshot](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/a813c30b-9777-4880-a101-569d6c7902cb)
+   
 
-3. **Select the COM Port:**
+4. **Select the COM Port:**
     - Click on the COM Port Selection Dropdown.
     - A list of available COM ports will appear.
     - Select the COM port corresponding to your APD Module (e.g., COM3, COM4, /dev/ttyUSB0).
 
-    ![COM Port Selection Screenshot](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/95a4906f-bd3f-416b-be4d-8dc1adace9dc)
+
+   ![COM Port Selection Screenshot](https://github.com/user-attachments/assets/9a530894-626b-4bcc-ab17-31a5dda40603)
+
+   
 
 
-4. **Refresh Connection:**
+6. **Refresh Connection:**
     -You can refresh the connected ports by clicking the "Refresh" button.
 
 
@@ -120,6 +124,9 @@ The Temperature Gauge Chart section provides users with real-time temperature re
     - The warning and danger ranges are marked in yellow and red, respectively.
 
 ### Actions Based on Temperature Readings
+
+- **Safe Range (Blue):**
+  - If the temperature is within the blue range, the APD Module is operating normally.
 
 - **Safe Range (Green):**
   - If the temperature is within the green range, the APD Module is operating normally.
@@ -162,9 +169,11 @@ The Set Configuration Section allows users to configure the necessary parameters
     - The dropdown will display a list of available `.txt` configuration files.
     - Select the desired configuration file that contains the necessary values.
 
-    ![Select File Dropdown](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/b39804a8-e04f-482b-94e6-7b7cacc01833)
+   ![Select File Dropdown](https://github.com/user-attachments/assets/5526498d-5223-4f6e-8f56-561a4d5fc28a)
 
-4. **Add File Manually Button:**
+
+
+5. **Add File Manually Button:**
     - Click on the "Add File Manually" button to create a new configuration file.
     - A dialog window will appear prompting you to enter the necessary values:
       - Min Voltage
@@ -173,10 +182,12 @@ The Set Configuration Section allows users to configure the necessary parameters
       - Max Temperature
     - Enter the values and save the configuration file.
     - 
-![Add File Manually Dialog](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/c7121c20-8f3f-44b2-8a1f-6f9228906898)
+
+![Add File Manually Dialog](https://github.com/user-attachments/assets/f21067b3-5a3b-445a-ae41-c870d45219ea)
+
 
  
-5. **Add File on PC Button:**
+6. **Add File on PC Button:**
     - Click on the "Add File on PC" button to upload an existing `.txt` configuration file from your local computer.
     - A file browser window will appear.
     - Navigate to the location of the `.txt` file on your computer and select it.
