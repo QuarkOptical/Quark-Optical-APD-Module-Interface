@@ -91,7 +91,7 @@ The APD Interface provides real-time status updates on the operation of the APD 
 
 
 - **Red**: The APD Device is not working properly.
-  ![Red Status]![image](https://github.com/user-attachments/assets/f2e90908-3194-4a55-b2a9-9f957cc58408)
+  ![Red Status](https://github.com/user-attachments/assets/f2e90908-3194-4a55-b2a9-9f957cc58408)
 
 ### Troubleshooting
 
