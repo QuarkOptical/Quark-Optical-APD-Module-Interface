@@ -1,4 +1,4 @@
-# APD Module Interface Application User Guide
+![image](https://github.com/user-attachments/assets/5ba117c6-7b45-49d3-bcd3-bd0ffcc1ac18)# APD Module Interface Application User Guide
 
 ## Introduction
 
@@ -68,7 +68,7 @@ Connect the APD Module to your system via the serial port.
 1. Open APD Module Interface.exe file.
 
 ## Usage
-
+**Interface**
 ![Interface Screenshot](https://github.com/user-attachments/assets/a3b79fc1-809a-40f9-93d2-85e7bc38143d)
 
 
@@ -377,7 +377,8 @@ The Temperature and Voltage Graphs section allows users to visualize temperature
    - The graphs show real-time temperature and voltage values plotted over time.
    - Each graph includes axes labels and units for clarity.
 
-![Temperature and Voltage Graphs](https://github.com/user-attachments/assets/cc1b83ac-f79f-48dc-acd4-9fbfdf2ed63b)
+![Temperature and Voltage Graphs](https://github.com/user-attachments/assets/04d743df-42ff-46ba-9b3d-08f9aa96d4e1)
+
 
 
 
