@@ -68,8 +68,22 @@ Connect the APD Module to your system via the serial port.
 1. Open APD Module Interface.exe file.
 
 ## Usage
-**Interface**
-![Interface Screenshot](https://github.com/user-attachments/assets/a3b79fc1-809a-40f9-93d2-85e7bc38143d)
+
+
+**Main Interface**
+The APD Module Interface offers users 2 different theme options.
+  -Light Theme
+  -Dark Theme
+
+Users can toggle between this two themes by clicking the Toggle Theme Button top right.
+
+-Light Theme
+![Light Theme Interface Screenshot](https://github.com/user-attachments/assets/2cca2a47-3382-4f92-bf59-3e7971995a5e)
+
+-Dark Theme
+![Dark Theme Interface Screenshot](https://github.com/user-attachments/assets/c3d55935-f362-44f8-8c0a-c9a0454b1ed0)
+
+
 
 
 
