@@ -8,7 +8,6 @@ def setup_com_port_selection_connections(main_window):
     main_window.connectButton.clicked.connect(partial(toggle_connection,main_window))
     
 def onPortChanged(main_window):
-    print(main_window)
     if main_window.serial_thread:
         selectedPortName = main_window.comPorts.currentText()
         main_window.serial_thread.set_port_name(selectedPortName)
@@ -34,7 +33,7 @@ def start_connection(main_window):
     main_window.configureButton.setEnabled(True)
     main_window.startProcessButton.setEnabled(True)
     main_window.HVProgressBar.setEnabled(True)
-    main_window.set_controls(True)
+    main_window.set_controls_enabled(True)
     main_window.connectButton.setText("Disconnect")
     main_window.setup_config()
         
@@ -60,7 +59,7 @@ def stop_connection(main_window):
     main_window.comPorts.setEnabled(True)
     main_window.refreshButton.setEnabled(True)
     main_window.HVProgressBar.setEnabled(False)
-    main_window.set_controls(False)
+    main_window.set_controls_enabled(False)
     main_window.connectButton.setText("Connect")
         
     main_window.sendLineEdit.setEnabled(False)

@@ -37,7 +37,7 @@ def start_process(main_window):
     main_window.connectButton.setEnabled(False)
     main_window.comPorts.setEnabled(False)
     main_window.refreshButton.setEnabled(False)
-    main_window.set_controls(False)
+    main_window.set_controls_enabled(False)
     main_window.startProcessButton.setText("Stop Process")
 
 
@@ -54,11 +54,11 @@ def stop_process(main_window):
     main_window.connectButton.setEnabled(True)
     main_window.comPorts.setEnabled(True)
     main_window.refreshButton.setEnabled(True)
-    main_window.set_controls(True)
+    main_window.set_controls_enabled(True)
     main_window.startProcessButton.setText("Start Process")
     main_window.status="DISABLED"
     main_window.previous_status="DISABLED"
-    main_window.aaaa.setStyleSheet("background-color: #A9A9A9;")
+    main_window.aaaa.setStyleSheet("background-color: #3c3f41;")
     
 def send_configuration(main_window):
     if main_window.is_connected and main_window.serial_thread.port and main_window.serial_thread.port.is_open:

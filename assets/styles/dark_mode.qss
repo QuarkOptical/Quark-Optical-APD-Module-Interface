@@ -40,8 +40,8 @@ QSlider::groove:horizontal:disabled {
                 border-radius: 4px;
             }
 QSlider::handle:horizontal:disabled {
-                background:gray;
-                border: 1px solid gray;
+                background:#3c3f41;
+                border: 1px solid #3c3f41;
                 width: 4px;
                 border-radius: 3px;
                 margin: -7px -1;
@@ -66,8 +66,8 @@ QSlider::add-page:horizontal:disabled {
 
 QProgressBar {
     border: 1px solid black;
-    border-radius: 5px;
-    background-color: #FFFFFF;
+    border-radius: 2px;
+    background-color: #3c3f41;
      /* Arkaplan rengi */
     
     height:1px;
@@ -75,10 +75,27 @@ QProgressBar {
 }
 
 QProgressBar::chunk {
-    background-color: #4197d4;
+    background-color: #ffffff;
  /* İlerleme rengi */
     width: 20px; /* İlerleme çubuğu kalınlığı */
 }
+QProgressBar:disabled {
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: #cfcfcf;
+     /* Arkaplan rengi */
+    
+    height:1px;
+
+}
+
+QProgressBar::chunk:disabled {
+    background-color: #a7a7a7;
+ /* İlerleme rengi */
+    width: 20px; /* İlerleme çubuğu kalınlığı */
+}
+
+
 
 QPushButton:hover {
     background-color: lightgray;
@@ -88,14 +105,14 @@ QPushButton:disabled {
     color: darkgray;
 }
 QToolButton:hover {
-    background-color: lightgray;
+    background-color: black;
 }
 QToolButton:disabled {
     background-color: gray;
     color: darkgray;
 }
 QComboBox:hover {
-    background-color: lightgray;
+    background-color: black;
 }
 QComboBox:disabled {
     background-color: lightgray;
@@ -105,3 +122,78 @@ QComboBox:disabled {
     background-color:rgba(9,107,178, 0)
 
 }*/
+#frame{
+    border: 1px solid #c9c9c9;
+}
+
+/*
+QWidget {
+    background-color: #3c3f41;
+    color: #bbbbbb;
+}*/
+/*
+QPushButton {
+    background-color: #4a4a4a;
+    color: #bbbbbb;
+    border: 1px solid #5c5c5c;
+}
+
+QPushButton:hover {
+    background-color: #5c5c5c;
+}*/
+QPushButton:disabled {
+    background-color: darkgray;
+    color: white;
+}
+QPushButton:hover {
+    background-color: black;
+}
+QLineEdit {
+    background-color: #3c3f41;
+    color: #ffffff;
+    border: 1px solid #5c5c5c;
+}
+
+QTextEdit {
+    background-color: #3c3f41;
+    color: #ffffff;
+    border: 1px solid #5c5c5c;
+}
+
+QLabel {
+    color: #ffffff;
+}
+
+QMenuBar {
+    background-color: #3c3f41;
+    color: #ffffff;
+}
+
+QMenuBar::item {
+    background-color: #3c3f41;
+    color: #ffffff;
+}
+
+QMenuBar::item:selected {
+    background-color: #5c5c5c;
+}
+
+QMenu {
+    background-color: #3c3f41;
+    color: #ffffff;
+}
+
+QMenu::item:selected {
+    background-color: #5c5c5c;
+}
+
+QStatusBar {
+    background-color: #3c3f41;
+    color: #ffffff;
+}
+
+QToolTip {
+    background-color: #3c3f41;
+    color: #ffffff;
+    border: 1px solid #5c5c5c;
+}

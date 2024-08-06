@@ -3,7 +3,6 @@ from PyQt6.QtWidgets import QMessageBox,QFileDialog
 import os
 import shutil
 def setup_set_configuration_connection(main_window):
-    main_window.list_files()
     main_window.addConfigButton.clicked.connect(lambda:show_popup(main_window))
     main_window.configsComboBox.currentIndexChanged.connect(lambda index: onComboBoxIndexChanged(main_window, index))
     main_window.addToolButton.clicked.connect(lambda:upload_data(main_window))

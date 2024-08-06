@@ -1,13 +1,15 @@
 from PyQt6.QtWidgets import QMainWindow, QMessageBox,QButtonGroup
 from PyQt6.QtCore import QTimer, QThread
 from PyQt6.QtSerialPort import QSerialPortInfo
+from PyQt6.QtGui import QPalette
 import re
 from ui_setup import setup_ui
-from sections.section_com_port_selection import setup_com_port_selection_connections,stop_connection
-from sections.section_configure import setup_configure_connections,stop_process
-from sections.section_dialogs import setup_dialog_connection
-from sections.section_set_configuration import setup_set_configuration_connection
-from sections.section_terminal import setup_terminal_connections
+from section_com_port_selection import setup_com_port_selection_connections,start_connection,stop_connection
+from section_configure import setup_configure_connections,start_process,stop_process
+from section_dialogs import setup_dialog_connection
+from section_set_configuration import setup_set_configuration_connection
+from section_terminal import setup_terminal_connections
+
 from PyQt6 import uic
 import os
 
@@ -22,6 +24,8 @@ class MainWindow(QMainWindow):
         setup_set_configuration_connection(self)
         setup_terminal_connections(self)
         self.populateSerialPorts()
+        self.list_files()
+       
     
     def initialize_variables(self):
         uic.loadUi("ui/main_window.ui",self)
@@ -43,10 +47,13 @@ class MainWindow(QMainWindow):
         self.is_connected = False
         self.is_started = False
         
+        self.theme=0
+        
         self.qss_file = "assets/styles/slider.qss"
         self.qss_file2 = "assets/styles/slider.qss"
 
-     
+        self.palette=QPalette()
+        
         self.timer = QTimer()
         self.terminal_timer=QTimer()
         self.terminal_timer.setInterval(100)
@@ -83,11 +90,11 @@ class MainWindow(QMainWindow):
         if self.status!=self.previous_status:
             self.previous_status=self.status
             if self.status in [2,3,4]:
-                self.aaaa.setStyleSheet("background-color: #A01526;")
+                self.aaaa.setStyleSheet("background-color: #3c3f41;")
             elif self.status==1:
                 self.aaaa.setStyleSheet("background-color: #096bb2;")
             elif self.status==0:
-                self.aaaa.setStyleSheet("background-color: #3A7900;")
+                self.aaaa.setStyleSheet("background-color: #326307;")
             elif self.status in [5,"CALIBRATING"]:
                 self.aaaa.setStyleSheet("background-color: #A9A9A9;")
             
@@ -105,7 +112,7 @@ class MainWindow(QMainWindow):
                 self.tempWidget.setYRange(temp_value-5,temp_value+5)
                 
                 if self.time>=30:
-                    self.tempWidget.setXRange(self.time-20,self.time)
+                   self.tempWidget.setXRange(self.time-20,self.time)
 
             elif hv_match:
                 hv_value = float(hv_match.group(1)) / 100
@@ -195,7 +202,7 @@ class MainWindow(QMainWindow):
             self.handle_error("Unable to establish a UART connection. Please check the connection and try again. If the issue persists, contact support.")
   
         
-    def set_controls(self, enabled):
+    def set_controls_enabled(self, enabled):
         self.minVoltageSlider.setEnabled(enabled)
         self.maxVoltageSlider.setEnabled(enabled)
         self.minTempSlider.setEnabled(enabled)
@@ -211,3 +218,5 @@ class MainWindow(QMainWindow):
         dosya_adlari = os.listdir(hedef_dizin)
         self.configsComboBox.clear()
         self.configsComboBox.addItems(dosya_adlari)
+        
+        
