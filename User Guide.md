@@ -12,11 +12,10 @@ Welcome to the APD Module Interface Application! This guide will help you get st
 4. [Temperature Gauge Chart](#temperature-gauge-chart)
 5. [Set Configuration Section](#set-configuration-section)
 6. [Send Configuration Section](#send-configuration-section)
-7. [High Voltage Reading Progress Bar](#high-voltage-reading-progress-bar)
-8. [Terminal Section](#terminal-section)
-9. [Temperature and Voltage Graphs](#temperature-and-voltage-graphs)
-10. [Contact](#contact)
-11. [Conclusion](#conclusion)
+7. [Terminal Section](#terminal-section)
+8. [Temperature and Voltage Graphs](#temperature-and-voltage-graphs)
+9. [Contact](#contact)
+10. [Conclusion](#conclusion)
 
 ## Installation
 
@@ -70,7 +69,8 @@ Connect the APD Module to your system via the serial port.
 
 ## Usage
 
-![Interface Screenshot](https://github.com/user-attachments/assets/478cb85e-2019-4896-8cb3-56d9bfededfd)
+![Interface Screenshot](https://github.com/user-attachments/assets/a3b79fc1-809a-40f9-93d2-85e7bc38143d)
+
 
 
 
@@ -159,7 +159,7 @@ The Temperature Gauge Chart section provides users with real-time temperature re
   - Ensure the module is not exposed to external temperature extremes.
 
 
-### Set Configuration Section
+## Set Configuration Section
 
 The Set Configuration Section allows users to configure the necessary parameters for the APD Module's map function. These parameters include minimum and maximum voltage, and minimum and maximum temperature. Users can select an existing configuration file, create a new configuration file manually, or add a configuration file from their local PC.
 
@@ -228,7 +228,7 @@ Here is an example of what a configuration `.txt` file might look like:
 35.6
 ```
 
-### High Voltage Reading Progress Bar
+7. High Voltage Reading Progress Bar
 
 The High Voltage Reading Progress Bar section visualizes the current high voltage value within its specified limits (minimum to maximum). This helps users monitor the voltage level of the APD Module and ensures it stays within safe operational parameters.
 
@@ -256,7 +256,7 @@ The High Voltage Reading Progress Bar section visualizes the current high voltag
 
 
 
-### Send Configuration Section
+## Send Configuration Section
 
 The Send Configuration Section allows users to configure and send parameters to the APD Module for operation. This section includes sliders and double spin boxes for setting minimum and maximum voltage, as well as minimum and maximum temperature values. Additionally, it features buttons for sending the configuration to the serial port and starting the data visualization and experiment.
 
