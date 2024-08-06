@@ -7,22 +7,21 @@ Welcome to the APD Module Interface Application! This guide will help you get st
 ## Table of Contents
 
 1. [Installation](#installation)
-2. [Configuration](#configuration)
-3. [Usage](#usage)
-4. [COM Port Selection Section](#com-port-selection-section)
-5. [Temperature Gauge Chart](#temperature-gauge-chart)
-6. [Set Configuration Section](#set-configuration-section)
-7. [Send Configuration Section](#send-configuration-section)
-8. [High Voltage Reading Progress Bar](#high-voltage-reading-progress-bar)
-9. [Terminal Section](#terminal-section)
-10. [Temperature and Voltage Graphs](#temperature-and-voltage-graphs)
-11. [Contact](#contact)
-12. [Conclusion](#conclusion)
+2. [Usage](#usage)
+3. [COM Port Selection Section](#com-port-selection-section)
+4. [Temperature Gauge Chart](#temperature-gauge-chart)
+5. [Set Configuration Section](#set-configuration-section)
+6. [Send Configuration Section](#send-configuration-section)
+7. [High Voltage Reading Progress Bar](#high-voltage-reading-progress-bar)
+8. [Terminal Section](#terminal-section)
+9. [Temperature and Voltage Graphs](#temperature-and-voltage-graphs)
+10. [Contact](#contact)
+11. [Conclusion](#conclusion)
 
 ## Installation
 
 ### For Standart User
-- Open APD Module Interface.exe file.
+- Download APD Module Interface folder.
 
   
 ### For Developers
@@ -56,7 +55,7 @@ Welcome to the APD Module Interface Application! This guide will help you get st
 Connect the APD Module to your system via the serial port.
 
 
-### Open the application:
+### Open the application (For Developers):
 
 1. 
     ```bash
@@ -64,6 +63,10 @@ Connect the APD Module to your system via the serial port.
     ```
 2.  run main.py manually
 
+
+### Open the application (For Standart User):
+
+1. Open APD Module Interface.exe file.
 
 ## Usage
 
