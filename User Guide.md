@@ -21,6 +21,11 @@ Welcome to the APD Module Interface Application! This guide will help you get st
 
 ## Installation
 
+##For Standart User
+- Open APD Module Interface.exe file.
+
+  
+##For Developers
 ### Prerequisites
 
 - Python 3.8+
