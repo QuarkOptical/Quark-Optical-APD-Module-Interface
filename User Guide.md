@@ -7,26 +7,29 @@ Welcome to the APD Module Interface Application! This guide will help you get st
 ## Table of Contents
 
 1. [Installation](#installation)
-2. [Configuration](#configuration)
-3. [Usage](#usage)
-4. [COM Port Selection Section](#com-port-selection-section)
-5. [Temperature Gauge Chart](#temperature-gauge-chart)
-6. [Set Configuration Section](#set-configuration-section)
-7. [Send Configuration Section](#send-configuration-section)
-8. [High Voltage Reading Progress Bar](#high-voltage-reading-progress-bar)
-9. [Terminal Section](#terminal-section)
-10. [Temperature and Voltage Graphs](#temperature-and-voltage-graphs)
-11. [Contact](#contact)
-12. [Conclusion](#conclusion)
+2. [Usage](#usage)
+3. [COM Port Selection Section](#com-port-selection-section)
+4. [Temperature Gauge Chart](#temperature-gauge-chart)
+5. [Set Configuration Section](#set-configuration-section)
+6. [Send Configuration Section](#send-configuration-section)
+7. [Terminal Section](#terminal-section)
+8. [Temperature and Voltage Graphs](#temperature-and-voltage-graphs)
+9. [Contact](#contact)
+10. [Conclusion](#conclusion)
 
 ## Installation
 
-### Prerequisites
+### For Standart User
+- Download APD Module Interface folder.
+
+  
+### For Developers
+#### Prerequisites
 
 - Python 3.8+
 - Required Python packages (listed in `requirements.txt`)
 
-### Steps
+#### Steps
 
 1. Clone the repository:
     ```bash
@@ -51,7 +54,7 @@ Welcome to the APD Module Interface Application! This guide will help you get st
 Connect the APD Module to your system via the serial port.
 
 
-### Open the application:
+### Open the application (For Developers):
 
 1. 
     ```bash
@@ -60,9 +63,37 @@ Connect the APD Module to your system via the serial port.
 2.  run main.py manually
 
 
+### Open the application (For Standart User):
+
+1. Open APD Module Interface.exe file.
+
 ## Usage
 
-![Interface Screenshot](https://github.com/user-attachments/assets/478cb85e-2019-4896-8cb3-56d9bfededfd)
+
+**Main Interface**
+The APD Module Interface offers users 2 different theme options.
+  -Light Theme
+  -Dark Theme
+
+Users can toggle between this two themes by clicking the Toggle Theme Button top right.
+
+-Light Theme
+
+
+![Light Theme Interface Screenshot](https://github.com/user-attachments/assets/2cca2a47-3382-4f92-bf59-3e7971995a5e)
+
+
+
+
+
+-Dark Theme
+
+
+![Dark Theme Interface Screenshot](https://github.com/user-attachments/assets/c3d55935-f362-44f8-8c0a-c9a0454b1ed0)
+
+
+
+
 
 
 
@@ -151,7 +182,7 @@ The Temperature Gauge Chart section provides users with real-time temperature re
   - Ensure the module is not exposed to external temperature extremes.
 
 
-### Set Configuration Section
+## Set Configuration Section
 
 The Set Configuration Section allows users to configure the necessary parameters for the APD Module's map function. These parameters include minimum and maximum voltage, and minimum and maximum temperature. Users can select an existing configuration file, create a new configuration file manually, or add a configuration file from their local PC.
 
@@ -220,7 +251,7 @@ Here is an example of what a configuration `.txt` file might look like:
 35.6
 ```
 
-### High Voltage Reading Progress Bar
+7. High Voltage Reading Progress Bar
 
 The High Voltage Reading Progress Bar section visualizes the current high voltage value within its specified limits (minimum to maximum). This helps users monitor the voltage level of the APD Module and ensures it stays within safe operational parameters.
 
@@ -248,7 +279,7 @@ The High Voltage Reading Progress Bar section visualizes the current high voltag
 
 
 
-### Send Configuration Section
+## Send Configuration Section
 
 The Send Configuration Section allows users to configure and send parameters to the APD Module for operation. This section includes sliders and double spin boxes for setting minimum and maximum voltage, as well as minimum and maximum temperature values. Additionally, it features buttons for sending the configuration to the serial port and starting the data visualization and experiment.
 
@@ -369,7 +400,8 @@ The Temperature and Voltage Graphs section allows users to visualize temperature
    - The graphs show real-time temperature and voltage values plotted over time.
    - Each graph includes axes labels and units for clarity.
 
-![Temperature and Voltage Graphs](https://github.com/user-attachments/assets/cc1b83ac-f79f-48dc-acd4-9fbfdf2ed63b)
+![Temperature and Voltage Graphs](https://github.com/user-attachments/assets/04d743df-42ff-46ba-9b3d-08f9aa96d4e1)
+
 
 
 
