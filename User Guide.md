@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/5ba117c6-7b45-49d3-bcd3-bd0ffcc1ac18)# APD Module Interface Application User Guide
+# APD Module Interface Application User Guide
 
 ## Introduction
 
