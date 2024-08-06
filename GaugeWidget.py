@@ -5,7 +5,7 @@ from PyQt6.QtCore import Qt, QRectF, QSize
 class GaugeWidget(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.value = 10
+        self.value = 0
         self.gauge_status=0
         self.theme=0
             
