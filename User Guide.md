@@ -78,10 +78,19 @@ The APD Module Interface offers users 2 different theme options.
 Users can toggle between this two themes by clicking the Toggle Theme Button top right.
 
 -Light Theme
+
+
 ![Light Theme Interface Screenshot](https://github.com/user-attachments/assets/2cca2a47-3382-4f92-bf59-3e7971995a5e)
 
+
+
+
+
 -Dark Theme
+
+
 ![Dark Theme Interface Screenshot](https://github.com/user-attachments/assets/c3d55935-f362-44f8-8c0a-c9a0454b1ed0)
+
 
 
 
