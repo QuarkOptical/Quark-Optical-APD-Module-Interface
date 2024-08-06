@@ -71,6 +71,42 @@ Connect the APD Module to your system via the serial port.
 
 
 **Main Interface**
+
+![Light Theme Interface Screenshot](https://github.com/user-attachments/assets/2cca2a47-3382-4f92-bf59-3e7971995a5e)
+
+
+### APD Interface - Status Indicator
+
+The APD Interface provides real-time status updates on the operation of the APD Device. The status is indicated by the color of the top bar of the interface. Below are the meanings of each color:
+
+#### Status Indicators
+
+- **Blue**: The APD Device is calibrating.
+  ![Blue Status](https://github.com/user-attachments/assets/41733e59-0af5-4801-a88f-4e17ef746961)
+
+
+- **Green**: The APD Device is working without any problem.
+  ![Green Status](https://github.com/user-attachments/assets/e9699843-33f8-4664-a6a3-d1c690bfab10)
+
+
+- **Red**: The APD Device is not working properly.
+  ![Red Status]![image](https://github.com/user-attachments/assets/f2e90908-3194-4a55-b2a9-9f957cc58408)
+
+#### Troubleshooting
+
+If the APD Device is showing a **Red** status, follow these steps:
+
+1. Check the power connection to the device.
+2. Ensure that all cables are properly connected.
+3. Restart the device and see if the status changes.
+4. Refer to the user manual for detailed troubleshooting steps.
+5. Contact Quark Optical support for further assistance.
+
+
+
+### Themes
+
+
 The APD Module Interface offers users 2 different theme options.
   -Light Theme
   -Dark Theme
