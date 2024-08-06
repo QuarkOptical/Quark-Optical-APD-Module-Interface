@@ -46,12 +46,7 @@ class MainWindow(QMainWindow):
         self.serial_thread = None
         self.is_connected = False
         self.is_started = False
-        
         self.theme=0
-        
-        self.qss_file = "assets/styles/slider.qss"
-        self.qss_file2 = "assets/styles/slider.qss"
-
         self.palette=QPalette()
         
         self.timer = QTimer()
@@ -90,19 +85,15 @@ class MainWindow(QMainWindow):
         if self.status!=self.previous_status:
             self.previous_status=self.status
             if self.status in [2,3,4]:
-                self.aaaa.setStyleSheet("background-color: #3c3f41;")
+                self.aaaa.setStyleSheet("background-color: #801212;")
             elif self.status==1:
-                self.aaaa.setStyleSheet("background-color: #096bb2;")
+                self.aaaa.setStyleSheet("background-color: #0c4670;")
             elif self.status==0:
                 self.aaaa.setStyleSheet("background-color: #326307;")
-            elif self.status in [5,"CALIBRATING"]:
-                self.aaaa.setStyleSheet("background-color: #A9A9A9;")
-            
-        if self.status in [2,3,4]:
-            pass
-        elif self.status in [1,"CALIBRATING"]:
-            pass
-        elif self.status==0:
+            elif self.status ==5:
+                self.aaaa.setStyleSheet("background-color: #3c3f41;")
+
+        if self.status==0:
             if temp_match:
                 temp_value = float(temp_match.group(1)) / 100
                 self.temp_data.append(temp_value)
