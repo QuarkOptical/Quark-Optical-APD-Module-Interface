@@ -1,4 +1,3 @@
-import sys
 from PyQt6.QtWidgets import  QWidget
 from PyQt6.QtGui import QPainter, QColor, QFont, QPen
 from PyQt6.QtCore import Qt, QRectF, QSize
@@ -32,8 +31,6 @@ class GaugeWidget(QWidget):
         start_angle = 180 * 16
         span_angle = 180 * 16
 
-        # Draw the base arc
-        
         if self.theme==0:
             self.pen = QPen(QColor(220, 220, 220), 25, Qt.PenStyle.SolidLine, Qt.PenCapStyle.FlatCap)
             painter.setPen(self.pen)
@@ -60,7 +57,6 @@ class GaugeWidget(QWidget):
         painter.setPen(self.pen)
         painter.drawArc(rect, -start_angle, int(-span_angle * (self.value / 70.0)))
 
-        # Draw the text
         if self.theme==0:
             painter.setPen(QColor(0, 0, 0))
             painter.setFont(QFont('Arial', 12))
@@ -72,6 +68,5 @@ class GaugeWidget(QWidget):
             text_rect = QRectF(30, 50, width - 60, (height - 60) / 2)
             painter.drawText(text_rect, Qt.AlignmentFlag.AlignCenter, f'{self.value}')    
         
-
     def change_theme(self,theme):
         self.theme=theme

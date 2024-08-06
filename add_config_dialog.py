@@ -1,6 +1,5 @@
 from PyQt6.QtWidgets import QDialog
 from PyQt6 import uic
-import os
 class PopupDialog(QDialog):
     def __init__(self,parent):
         super().__init__(parent)

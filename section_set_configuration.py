@@ -2,6 +2,7 @@ from add_config_dialog import PopupDialog
 from PyQt6.QtWidgets import QMessageBox,QFileDialog
 import os
 import shutil
+
 def setup_set_configuration_connection(main_window):
     main_window.addConfigButton.clicked.connect(lambda:show_popup(main_window))
     main_window.configsComboBox.currentIndexChanged.connect(lambda index: onComboBoxIndexChanged(main_window, index))

@@ -13,5 +13,5 @@ def show_info(main_window):
         pass
     
 def show_guide():
-    url = "https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/blob/main/User%20Guide.md"  # Replace with the URL you want to open
+    url = "https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/blob/main/User%20Guide.md" 
     webbrowser.open(url)

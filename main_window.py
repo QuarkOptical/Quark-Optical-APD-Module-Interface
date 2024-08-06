@@ -4,8 +4,8 @@ from PyQt6.QtSerialPort import QSerialPortInfo
 from PyQt6.QtGui import QPalette
 import re
 from ui_setup import setup_ui
-from section_com_port_selection import setup_com_port_selection_connections,start_connection,stop_connection
-from section_configure import setup_configure_connections,start_process,stop_process
+from section_com_port_selection import setup_com_port_selection_connections,stop_connection
+from section_configure import setup_configure_connections,stop_process
 from section_dialogs import setup_dialog_connection
 from section_set_configuration import setup_set_configuration_connection
 from section_terminal import setup_terminal_connections

@@ -1,5 +1,4 @@
 from PyQt6.QtWidgets import QLabel
-from PyQt6 import uic
 import pyqtgraph as pg
 from PyQt6.QtCore import Qt
 from CustomProgressBar import CustomProgressBar
@@ -136,10 +135,6 @@ def apply_light_palette(main_window):
     QApplication.instance().setPalette(palette)
     main_window.tempWidget.setBackground('#ffffff') 
     main_window.voltWidget.setBackground('#ffffff')
-    
-    #main_window.volt_pen = pg.mkPen(color='k', width=2)
-    #main_window.temp_pen = pg.mkPen(color='k', width=2)
-    
     main_window.tempWidget.setTitle("Temperature Graph",color="black")
     main_window.voltWidget.setTitle("Voltage Graph",color="black")
     
@@ -176,10 +171,6 @@ def apply_dark_palette(main_window):
     QApplication.instance().setPalette(palette)
     main_window.tempWidget.setBackground('#3c3f41')
     main_window.voltWidget.setBackground('#3c3f41')
-
-    #main_window.volt_pen = pg.mkPen(color='red', width=2)
-    #main_window.temp_pen = pg.mkPen(color='w', width=2)
-    
     main_window.tempWidget.setTitle("Temperature Graph",color="white")
     main_window.voltWidget.setTitle("Voltage Graph",color="white")
 
