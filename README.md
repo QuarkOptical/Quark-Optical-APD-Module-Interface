@@ -82,7 +82,8 @@ The APD Interface provides real-time status updates on the operation of the APD 
 #### Status Indicators
 
 - **Blue**: The APD Device is calibrating.
-  ![Blue Status](https://github.com/user-attachments/assets/41733e59-0af5-4801-a88f-4e17ef746961)
+  ![Blue Status](https://github.com/user-attachments/assets/6b73b373-1114-4eb0-abeb-135ec451a076)
+
 
 
 - **Green**: The APD Device is working without any problem.
