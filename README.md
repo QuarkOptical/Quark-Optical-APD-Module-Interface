@@ -67,7 +67,7 @@ Connect the APD Module to your system via the serial port.
 
 1. Open APD Module Interface.exe file.
 
-## Usage
+# Usage
 
 
 **Main Interface**
@@ -75,11 +75,11 @@ Connect the APD Module to your system via the serial port.
 ![Light Theme Interface Screenshot](https://github.com/user-attachments/assets/2cca2a47-3382-4f92-bf59-3e7971995a5e)
 
 
-### APD Interface - Status Indicator
+## APD Interface - Status Indicator
 
 The APD Interface provides real-time status updates on the operation of the APD Device. The status is indicated by the color of the top bar of the interface. Below are the meanings of each color:
 
-#### Status Indicators
+### Status Indicators
 
 - **Blue**: The APD Device is calibrating.
   ![Blue Status](https://github.com/user-attachments/assets/6b73b373-1114-4eb0-abeb-135ec451a076)
@@ -93,7 +93,7 @@ The APD Interface provides real-time status updates on the operation of the APD 
 - **Red**: The APD Device is not working properly.
   ![Red Status]![image](https://github.com/user-attachments/assets/f2e90908-3194-4a55-b2a9-9f957cc58408)
 
-#### Troubleshooting
+### Troubleshooting
 
 If the APD Device is showing a **Red** status, follow these steps:
 
@@ -105,7 +105,7 @@ If the APD Device is showing a **Red** status, follow these steps:
 
 
 
-### Themes
+## Themes
 
 
 The APD Module Interface offers users 2 different theme options.
@@ -130,15 +130,11 @@ Users can toggle between this two themes by clicking the Toggle Theme Button top
 
 
 
-
-
-
-
-## COM Port Selection Section
+# COM Port Selection Section
 
 The COM Port Selection section allows you to specify the serial port to which your APD Module is connected. This is a crucial step to ensure proper communication between the application and the module.
 
-### Steps to Select a COM Port
+## Steps to Select a COM Port
 
 1. **Locate the COM Port Selection Dropdown:**
     - Open the APD Module Interface Application.
@@ -166,11 +162,11 @@ The COM Port Selection section allows you to specify the serial port to which yo
     -You can refresh the connected ports by clicking the "Refresh" button.
 
 
-## Temperature Gauge Chart
+# Temperature Gauge Chart
 
 The Temperature Gauge Chart section provides users with real-time temperature readings from the APD Module. This gauge allows users to monitor the temperature of the module, ensuring it operates within safe and optimal conditions.
 
-### Steps to Use the Temperature Gauge Chart
+## Steps to Use the Temperature Gauge Chart
 
 1. **Locate the Temperature Gauge Chart:**
     - Open the APD Module Interface Application.
@@ -194,7 +190,7 @@ The Temperature Gauge Chart section provides users with real-time temperature re
     - The safe range is typically marked in green.
     - The warning and danger ranges are marked in yellow and red, respectively.
 
-### Actions Based on Temperature Readings
+## Actions Based on Temperature Readings
 
 - **Safe Range (Blue):**
   - If the temperature is within the blue range, the APD Module is operating normally.
@@ -208,7 +204,7 @@ The Temperature Gauge Chart section provides users with real-time temperature re
 - **Danger Range (Red):**
   - If the temperature reaches the red range, immediate action is required. Turn off the APD Module to prevent damage and investigate the cause of the high temperature.
 
-### Troubleshooting Temperature Issues
+## Troubleshooting Temperature Issues
 
 - **Gauge Not Updating:**
   - Ensure the APD Module is properly connected and the application is running.
@@ -219,11 +215,11 @@ The Temperature Gauge Chart section provides users with real-time temperature re
   - Ensure the module is not exposed to external temperature extremes.
 
 
-## Set Configuration Section
+# Set Configuration Section
 
 The Set Configuration Section allows users to configure the necessary parameters for the APD Module's map function. These parameters include minimum and maximum voltage, and minimum and maximum temperature. Users can select an existing configuration file, create a new configuration file manually, or add a configuration file from their local PC.
 
-### Steps to Configure the Parameters
+## Steps to Configure the Parameters
 
 1. **Locate the Set Configuration Section:**
     - Open the APD Module Interface Application.
@@ -265,7 +261,7 @@ The Set Configuration Section allows users to configure the necessary parameters
     - The selected file will be added to the list of available configuration files.
 
 
-### Troubleshooting Configuration Issues
+## Troubleshooting Configuration Issues
 
 - **File Not Listed in Dropdown:**
   - Ensure the configuration file is saved in the correct directory.
@@ -292,7 +288,7 @@ Here is an example of what a configuration `.txt` file might look like:
 
 The High Voltage Reading Progress Bar section visualizes the current high voltage value within its specified limits (minimum to maximum). This helps users monitor the voltage level of the APD Module and ensures it stays within safe operational parameters.
 
-### Steps to Visualize High Voltage Reading
+## Steps to Visualize High Voltage Reading
 
 1. **Locate the High Voltage Reading Progress Bar Section:**
     - Open the APD Module Interface Application.
@@ -308,7 +304,7 @@ The High Voltage Reading Progress Bar section visualizes the current high voltag
 
 
 
-### Troubleshooting High Voltage Reading Issues
+## Troubleshooting High Voltage Reading Issues
 
 - **Progress Bar Not Updating:**
   - Ensure the application is receiving real-time high voltage readings.
@@ -316,11 +312,11 @@ The High Voltage Reading Progress Bar section visualizes the current high voltag
 
 
 
-## Send Configuration Section
+# Send Configuration Section
 
 The Send Configuration Section allows users to configure and send parameters to the APD Module for operation. This section includes sliders and double spin boxes for setting minimum and maximum voltage, as well as minimum and maximum temperature values. Additionally, it features buttons for sending the configuration to the serial port and starting the data visualization and experiment.
 
-### Steps to Configure and Send Parameters
+## Steps to Configure and Send Parameters
 
 1. **Locate the Send Configuration Section:**
     - Open the APD Module Interface Application.
@@ -347,7 +343,7 @@ The Send Configuration Section allows users to configure and send parameters to 
     - Once clicked, this button disables the configure sliders and double spin boxes to prevent further configuration changes during operation.
 
 
-### Troubleshooting Configuration Issues
+## Troubleshooting Configuration Issues
 
 - **Slider or Spin Box Not Updating:**
   - Ensure the application is running correctly and responsive.
@@ -358,11 +354,11 @@ The Send Configuration Section allows users to configure and send parameters to 
   - Check for any errors or warnings related to serial communication and address them accordingly.
 
 
-## Terminal Section
+# Terminal Section
 
 The Terminal Section allows users to enter specified commands and receive responses from the APD Module system.
 
-### How to Use the Terminal
+## How to Use the Terminal
 
 1. **Command Input:**
    - Enter commands in the text area below. Commands should follow the specified format.
@@ -411,7 +407,7 @@ The Terminal Section allows users to enter specified commands and receive respon
    ![Response Display](https://github.com/QuarkOptical/Quark-Optical-APD-Module-Interface/assets/174795941/9bc4025f-69e7-4ef3-a134-37d54d5f5448)
 
 
-### Example Commands
+## Example Commands
 
 Here are some example commands you can enter:
 
@@ -423,11 +419,11 @@ Here are some example commands you can enter:
 
 
 
-## Temperature and Voltage Graphs
+# Temperature and Voltage Graphs
 
 The Temperature and Voltage Graphs section allows users to visualize temperature and voltage values in real-time using `pyqtgraph`. These graphs provide valuable insights into the APD Module's performance and can be customized with various plot options and export modes.
 
-### Visualizing Temperature and Voltage Values
+## Visualizing Temperature and Voltage Values
 
 1. **Locate the Temperature and Voltage Graphs Section:**
    - Open the APD Module Interface Application.
@@ -443,7 +439,7 @@ The Temperature and Voltage Graphs section allows users to visualize temperature
 
 
 
-### Plot Options
+## Plot Options
 
 `pyqtgraph` offers several plot options to customize the appearance and behavior of the graphs:
 
@@ -457,7 +453,7 @@ The Temperature and Voltage Graphs section allows users to visualize temperature
 3. **Crosshair and Data Points:**
    - Hover over the graph to see a crosshair and data point values, which help in precisely identifying values at specific points on the graph.
 
-### Export Modes
+## Export Modes
 
 `pyqtgraph` provides various export modes to save and share graph data:
 
@@ -474,7 +470,7 @@ The Temperature and Voltage Graphs section allows users to visualize temperature
    - Paste the copied image into documents, presentations, or other applications.
 
 
-### Troubleshooting Graph Issues
+## Troubleshooting Graph Issues
 
 - **Graph Not Updating:**
   - Ensure the application is receiving real-time data from the APD Module.
@@ -484,11 +480,11 @@ The Temperature and Voltage Graphs section allows users to visualize temperature
   - Verify the correct mapping of data points to the graph.
   - Ensure the units and scales are correctly configured.
 
-### Contact
+# Contact
 
 If you have any questions, need assistance, or would like to provide feedback, please feel free to reach out to us. We are here to help and ensure you have a smooth experience with our APD Module Interface Application.
 
-#### Contact Information
+## Contact Information
 
 - **Email:** info@quarkoptical.com
 - **Phone:** +90 850 309 98 09
@@ -497,7 +493,7 @@ If you have any questions, need assistance, or would like to provide feedback, p
 For the latest updates and information, visit our [website](http://www.quarkoptical.com) or follow us on social media.
 
 
-### Conclusion
+# Conclusion
 
 Thank you for using the APD Module Interface Application. This user guide aims to provide comprehensive instructions to help you effectively utilize the application's features, from configuring the module and monitoring its performance to using the terminal for command-based interactions.
 
