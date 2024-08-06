@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'c:\Users\baris\Desktop\Masaüstü\APD DENEME\ui\main_window.ui'
+# Form implementation generated from reading ui file 'd:\QT WORKSPACE\deneme1\Quark-Optical-APD-Module-Interface\ui\main_window.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.0
 #
@@ -19,7 +19,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("c:\\Users\\baris\\Desktop\\Masaüstü\\APD DENEME\\ui\\../assets/img/logo yazısız.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("d:\\QT WORKSPACE\\deneme1\\Quark-Optical-APD-Module-Interface\\ui\\../assets/img/logo yazısız.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setAutoFillBackground(False)
         MainWindow.setDocumentMode(False)
@@ -52,7 +52,7 @@ class Ui_MainWindow(object):
         self.label_3.setMinimumSize(QtCore.QSize(0, 0))
         self.label_3.setMaximumSize(QtCore.QSize(100, 80))
         self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("c:\\Users\\baris\\Desktop\\Masaüstü\\APD DENEME\\ui\\../assets/img/Quark(BeyazLogo).png"))
+        self.label_3.setPixmap(QtGui.QPixmap("d:\\QT WORKSPACE\\deneme1\\Quark-Optical-APD-Module-Interface\\ui\\../assets/img/Quark(BeyazLogo).png"))
         self.label_3.setScaledContents(True)
         self.label_3.setObjectName("label_3")
         self.horizontalLayout_5.addWidget(self.label_3, 0, QtCore.Qt.AlignmentFlag.AlignLeft)
@@ -69,7 +69,7 @@ class Ui_MainWindow(object):
         font.setBold(True)
         self.label_4.setFont(font)
         self.label_4.setText("")
-        self.label_4.setPixmap(QtGui.QPixmap("c:\\Users\\baris\\Desktop\\Masaüstü\\APD DENEME\\ui\\../assets/img/interface.png"))
+        self.label_4.setPixmap(QtGui.QPixmap("d:\\QT WORKSPACE\\deneme1\\Quark-Optical-APD-Module-Interface\\ui\\../assets/img/interface.png"))
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName("label_4")
         self.horizontalLayout_5.addWidget(self.label_4, 0, QtCore.Qt.AlignmentFlag.AlignRight)
@@ -86,7 +86,7 @@ class Ui_MainWindow(object):
         self.toggleThemeButton.setMaximumSize(QtCore.QSize(40, 40))
         self.toggleThemeButton.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("c:\\Users\\baris\\Desktop\\Masaüstü\\APD DENEME\\ui\\../assets/img/night-mode.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap("d:\\QT WORKSPACE\\deneme1\\Quark-Optical-APD-Module-Interface\\ui\\../assets/img/night-mode.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.toggleThemeButton.setIcon(icon1)
         self.toggleThemeButton.setIconSize(QtCore.QSize(20, 20))
         self.toggleThemeButton.setObjectName("toggleThemeButton")
@@ -100,7 +100,7 @@ class Ui_MainWindow(object):
         self.userGuideButton.setMaximumSize(QtCore.QSize(40, 40))
         self.userGuideButton.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("c:\\Users\\baris\\Desktop\\Masaüstü\\APD DENEME\\ui\\../assets/img/icons8-open-book-50.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon2.addPixmap(QtGui.QPixmap("d:\\QT WORKSPACE\\deneme1\\Quark-Optical-APD-Module-Interface\\ui\\../assets/img/icons8-open-book-50.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.userGuideButton.setIcon(icon2)
         self.userGuideButton.setIconSize(QtCore.QSize(30, 30))
         self.userGuideButton.setObjectName("userGuideButton")
@@ -114,7 +114,7 @@ class Ui_MainWindow(object):
         self.infoButton.setMaximumSize(QtCore.QSize(40, 40))
         self.infoButton.setText("")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("c:\\Users\\baris\\Desktop\\Masaüstü\\APD DENEME\\ui\\../assets/img/icons8-info-50.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon3.addPixmap(QtGui.QPixmap("d:\\QT WORKSPACE\\deneme1\\Quark-Optical-APD-Module-Interface\\ui\\../assets/img/icons8-info-50.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.infoButton.setIcon(icon3)
         self.infoButton.setIconSize(QtCore.QSize(30, 30))
         self.infoButton.setObjectName("infoButton")
